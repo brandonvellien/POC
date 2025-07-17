@@ -1,0 +1,106 @@
+{
+  "3": {
+    "inputs": {
+      "ckpt_name": "realvisXL_v5.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "meta": {
+      "__comment": "Nom du fichier de votre modèle realvisXL v5"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "__POSITIVE_PROMPT__",
+      "clip": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "meta": {
+      "__comment": "Prompt Positif généré par l'IA"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "__NEGATIVE_PROMPT__",
+      "clip": [
+        "3",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "meta": {
+      "__comment": "Prompt Négatif généré par l'IA"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "meta": {
+      "__comment": "Dimensions de l'image (SDXL préfère de plus grandes résolutions)"
+    }
+  },
+  "4": {
+    "inputs": {
+      "seed": 0,
+      "steps": 30,
+      "cfg": 7.5,
+      "sampler_name": "dpmpp_2m_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "3",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "meta": {
+      "__comment": "Le Sampler pour la génération de l'image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "4",
+        0
+      ],
+      "vae": [
+        "3",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "meta": {
+      "__comment": "Décode le latent en image visible"
+    }
+  },
+  "9": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "meta": {
+      "__comment": "Sauvegarde l'image"
+    }
+  }
+}

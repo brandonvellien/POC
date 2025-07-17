@@ -1,0 +1,34 @@
+# Variables d'environnement sensibles (tout fichier .env n'importe où dans le projet)
+.env
+*/.env
+
+# Dépendances Node.js (tous les dossiers node_modules/)
+node_modules/
+*/node_modules/
+
+# Dépendances Python (environnements virtuels et cache)
+venv/
+*/venv/
+__pycache__/
+*/__pycache__/
+*.pyc
+
+# Fichiers générés par Python (rapports, images, JSON, etc.)
+*.log
+*.sqlite3
+fashion_trend_report.pdf 
+fashion_trends_overview.png 
+fashion_trends_report.json 
+instagram_posts_*.json 
+output_*.webp 
+
+# Fichiers spécifiques au système d'exploitation ou à l'IDE
+.DS_Store # macOS
+.vscode/ # VS Code settings (si vous ne voulez pas les partager)
+*.bak
+*.swp
+
+# Fichiers de configuration Docker générés (si vous ne voulez pas les commiter)
+# Si Dockerfile et docker-compose.yaml sont des fichiers de template que vous modifiez,
+# vous pouvez les inclure. Si ce sont des fichiers générés/temporaires, ignorez-les.
+# Pour l'instant, nous les incluons s'ils sont nécessaires au build Render.

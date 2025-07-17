@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Service n°1 : Le Frontend Streamlit et l'orchestrateur Python
+  frontend:
+    build:
+      context: .  # Le contexte est le dossier actuel (POC), où se trouve le Dockerfile du frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    environment:
+      # On passe les clés API depuis votre fichier .env local au conteneur
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - INSTAGRAM_API_KEY=${INSTAGRAM_API_KEY}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      # On indique au conteneur comment parler au service backend
+      - BACKEND_API_URL=http://backend:3000
+    depends_on:
+      - backend
+
+  # Service n°2 : Le backend Node.js
+  backend:
+    build:
+      # CORRECTION : Le chemin est maintenant './backend' car il est un sous-dossier de POC
+      context: ./backend 
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/usr/src/app
+      - ./generator.py:/usr/src/app/generator.py
+      - /Users/brandon/stable-diffusion-webui/models/Stable-diffusion:/app/models
+      - /usr/src/app/node_modules
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017/trendsdb
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - PYTHON_EXECUTABLE=/usr/bin/python3 # Chemin de Python à l'intérieur du conteneur backend
+    depends_on:
+      - mongo
+
+  # Service n°3 : La base de données MongoDB
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

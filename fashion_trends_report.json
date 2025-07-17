@@ -1,0 +1,4819 @@
+{
+    "source_file": "instagram_posts_zara.json",
+    "analyzed_at": "2025-07-17T23:38:00.460408",
+    "color_trends": {
+        "dominant_colors": [
+            {
+                "rgb": [
+                    106,
+                    78,
+                    65
+                ],
+                "hex": "#6c5043",
+                "pantone_ref": "PANTONE 18-1222 Cocoa Brown",
+                "proportion": 0.1393939393939394,
+                "percentage": 13.939393939393941,
+                "color_name": "PANTONE 18-1222 Cocoa Brown"
+            },
+            {
+                "rgb": [
+                    29,
+                    24,
+                    21
+                ],
+                "hex": "#2b2929",
+                "pantone_ref": "PANTONE 19-4008 Meteorite",
+                "proportion": 0.13333333333333333,
+                "percentage": 13.333333333333334,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    69,
+                    51,
+                    44
+                ],
+                "hex": "#4a342e",
+                "pantone_ref": "PANTONE 19-1419 Chicory Coffee",
+                "proportion": 0.11515151515151516,
+                "percentage": 11.515151515151516,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    211,
+                    194,
+                    186
+                ],
+                "hex": "#cabeb5",
+                "pantone_ref": "PANTONE 13-0403 Gray Morn",
+                "proportion": 0.10909090909090909,
+                "percentage": 10.909090909090908,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    188,
+                    142,
+                    119
+                ],
+                "hex": "#b38b71",
+                "pantone_ref": "PANTONE 16-1323 Macaroon",
+                "proportion": 0.10909090909090909,
+                "percentage": 10.909090909090908,
+                "color_name": "PANTONE 16-1323 Macaroon"
+            },
+            {
+                "rgb": [
+                    237,
+                    223,
+                    216
+                ],
+                "hex": "#eee2dd",
+                "pantone_ref": "PANTONE 11-1005 Bridal Blush",
+                "proportion": 0.09696969696969697,
+                "percentage": 9.696969696969697,
+                "color_name": "PANTONE 11-1005 Bridal Blush"
+            },
+            {
+                "rgb": [
+                    163,
+                    101,
+                    76
+                ],
+                "hex": "#985c41",
+                "pantone_ref": "PANTONE 18-1239 Sierra",
+                "proportion": 0.08484848484848487,
+                "percentage": 8.484848484848486,
+                "color_name": "PANTONE 18-1239 Sierra"
+            },
+            {
+                "rgb": [
+                    129,
+                    118,
+                    111
+                ],
+                "hex": "#847a75",
+                "pantone_ref": "PANTONE 18-1210 Driftwood",
+                "proportion": 0.07878787878787878,
+                "percentage": 7.878787878787878,
+                "color_name": "PANTONE 18-1210 Driftwood"
+            },
+            {
+                "rgb": [
+                    212,
+                    173,
+                    151
+                ],
+                "hex": "#dfb19b",
+                "pantone_ref": "PANTONE 15-1318 Pink Sand",
+                "proportion": 0.07878787878787878,
+                "percentage": 7.878787878787878,
+                "color_name": "PANTONE 15-1318 Pink Sand"
+            },
+            {
+                "rgb": [
+                    163,
+                    158,
+                    155
+                ],
+                "hex": "#a09c98",
+                "pantone_ref": "PANTONE 16-5803 Flint Gray",
+                "proportion": 0.05454545454545454,
+                "percentage": 5.454545454545454,
+                "color_name": "PANTONE 16-5803 Flint Gray"
+            }
+        ]
+    },
+    "garment_trends": {
+        "distribution": {
+            "slip dress": {
+                "count": 4,
+                "percentage": 15.384615384615385
+            },
+            "culottes": {
+                "count": 3,
+                "percentage": 11.538461538461538
+            },
+            "dress": {
+                "count": 3,
+                "percentage": 11.538461538461538
+            },
+            "wide-leg pants": {
+                "count": 3,
+                "percentage": 11.538461538461538
+            },
+            "mini dress": {
+                "count": 2,
+                "percentage": 7.6923076923076925
+            },
+            "skirt": {
+                "count": 2,
+                "percentage": 7.6923076923076925
+            },
+            "sunglasses": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "shirt": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "romper": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "trench coat": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "maxi dress": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "turtleneck": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "crop top": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "cardigan": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            },
+            "cap": {
+                "count": 1,
+                "percentage": 3.8461538461538463
+            }
+        },
+        "top_garments": [
+            "slip dress",
+            "culottes",
+            "dress",
+            "wide-leg pants",
+            "mini dress",
+            "skirt",
+            "sunglasses",
+            "shirt",
+            "romper",
+            "trench coat",
+            "maxi dress",
+            "turtleneck",
+            "crop top",
+            "cardigan",
+            "cap"
+        ]
+    },
+    "style_trends": {
+        "distribution": {
+            "resort wear": {
+                "count": 5,
+                "percentage": 41.66666666666667
+            },
+            "haute couture": {
+                "count": 2,
+                "percentage": 16.666666666666664
+            },
+            "bohemian": {
+                "count": 2,
+                "percentage": 16.666666666666664
+            },
+            "urban": {
+                "count": 2,
+                "percentage": 16.666666666666664
+            },
+            "minimalist": {
+                "count": 1,
+                "percentage": 8.333333333333332
+            }
+        },
+        "top_styles": [
+            "resort wear",
+            "haute couture",
+            "bohemian",
+            "urban",
+            "minimalist"
+        ]
+    },
+    "color_garment_trends": {
+        "culottes": [
+            {
+                "rgb": [
+                    13,
+                    13,
+                    11
+                ],
+                "hex": "#26262a",
+                "frequency": 67.0109644830067,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    248,
+                    228,
+                    221
+                ],
+                "hex": "#f3dfd7",
+                "frequency": 37.21163218015081,
+                "color_name": "PANTONE 11-1305 Angel Wing"
+            },
+            {
+                "rgb": [
+                    242,
+                    217,
+                    209
+                ],
+                "hex": "#f2d8cd",
+                "frequency": 29.92383405150895,
+                "color_name": "PANTONE 12-1209 Soft Pink"
+            },
+            {
+                "rgb": [
+                    233,
+                    203,
+                    193
+                ],
+                "hex": "#edcdc2",
+                "frequency": 19.511418905530306,
+                "color_name": "PANTONE 13-1404 Pale Dogwood"
+            },
+            {
+                "rgb": [
+                    209,
+                    139,
+                    112
+                ],
+                "hex": "#c68463",
+                "frequency": 16.26158310470362,
+                "color_name": "PANTONE 16-1332 Pheasant"
+            },
+            {
+                "rgb": [
+                    250,
+                    233,
+                    228
+                ],
+                "hex": "#f5e3e2",
+                "frequency": 15.361669094366285,
+                "color_name": "PANTONE 11-2409 Delicacy"
+            },
+            {
+                "rgb": [
+                    33,
+                    28,
+                    24
+                ],
+                "hex": "#2b2929",
+                "frequency": 11.915263587391735,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    235,
+                    168,
+                    138
+                ],
+                "hex": "#edaa86",
+                "frequency": 11.399432370078143,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    221,
+                    189,
+                    178
+                ],
+                "hex": "#e2bdb3",
+                "frequency": 9.508075660618632,
+                "color_name": "PANTONE 13-1208 Peachy Keen"
+            },
+            {
+                "rgb": [
+                    207,
+                    167,
+                    153
+                ],
+                "hex": "#c5a193",
+                "frequency": 8.600476553627228,
+                "color_name": "PANTONE 15-1511 Mahogany Rose"
+            },
+            {
+                "rgb": [
+                    43,
+                    37,
+                    31
+                ],
+                "hex": "#2b2929",
+                "frequency": 7.6415811430212965,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    156,
+                    84,
+                    60
+                ],
+                "hex": "#a15843",
+                "frequency": 6.705312209422775,
+                "color_name": "PANTONE 18-1343 Auburn"
+            },
+            {
+                "rgb": [
+                    176,
+                    112,
+                    81
+                ],
+                "hex": "#b37256",
+                "frequency": 6.238009850388747,
+                "color_name": "PANTONE 16-1429 Sunburn"
+            },
+            {
+                "rgb": [
+                    225,
+                    185,
+                    172
+                ],
+                "hex": "#ddb6ab",
+                "frequency": 6.181039520623817,
+                "color_name": "PANTONE 14-1311 Evening Sand"
+            },
+            {
+                "rgb": [
+                    174,
+                    118,
+                    94
+                ],
+                "hex": "#a36e51",
+                "frequency": 6.011201941742301,
+                "color_name": "PANTONE 17-1430 Pecan Brown"
+            },
+            {
+                "rgb": [
+                    65,
+                    44,
+                    36
+                ],
+                "hex": "#4a342e",
+                "frequency": 5.803596524102732,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    85,
+                    45,
+                    27
+                ],
+                "hex": "#66352b",
+                "frequency": 5.350646357178461,
+                "color_name": "PANTONE 19-1435 Cherry Mahogany"
+            },
+            {
+                "rgb": [
+                    126,
+                    54,
+                    33
+                ],
+                "hex": "#8d3f2d",
+                "frequency": 4.742736526267128,
+                "color_name": "PANTONE 19-1250 Picante"
+            },
+            {
+                "rgb": [
+                    183,
+                    137,
+                    121
+                ],
+                "hex": "#ae8774",
+                "frequency": 4.728924412685398,
+                "color_name": "PANTONE 17-1227 Cafe Au Lait"
+            },
+            {
+                "rgb": [
+                    116,
+                    65,
+                    41
+                ],
+                "hex": "#754734",
+                "frequency": 4.5777110896962,
+                "color_name": "PANTONE 19-1241 Tortoise Shell"
+            },
+            {
+                "rgb": [
+                    50,
+                    20,
+                    12
+                ],
+                "hex": "#503130",
+                "frequency": 2.524662229936589,
+                "color_name": "PANTONE 19-1317 Bitter Chocolate"
+            },
+            {
+                "rgb": [
+                    38,
+                    17,
+                    14
+                ],
+                "hex": "#34292a",
+                "frequency": 2.230342981410641,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    143,
+                    91,
+                    59
+                ],
+                "hex": "#8b593e",
+                "frequency": 1.9437615828717132,
+                "color_name": "PANTONE 17-1142 Argan Oil"
+            },
+            {
+                "rgb": [
+                    81,
+                    59,
+                    59
+                ],
+                "hex": "#503938",
+                "frequency": 1.9376698549394697,
+                "color_name": "PANTONE 19-1518 Puce"
+            },
+            {
+                "rgb": [
+                    114,
+                    91,
+                    93
+                ],
+                "hex": "#6c5656",
+                "frequency": 1.7112418517140924,
+                "color_name": "PANTONE 18-1409 Peppercorn"
+            },
+            {
+                "rgb": [
+                    116,
+                    84,
+                    70
+                ],
+                "hex": "#7a5747",
+                "frequency": 1.2568796936737345,
+                "color_name": "PANTONE 18-1130 Aztec"
+            },
+            {
+                "rgb": [
+                    211,
+                    150,
+                    104
+                ],
+                "hex": "#dd9c6b",
+                "frequency": 1.2548269909828376,
+                "color_name": "PANTONE 15-1234 Gold Earth"
+            },
+            {
+                "rgb": [
+                    85,
+                    77,
+                    69
+                ],
+                "hex": "#5b5149",
+                "frequency": 0.9243417624014582,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            },
+            {
+                "rgb": [
+                    235,
+                    184,
+                    138
+                ],
+                "hex": "#f1bd89",
+                "frequency": 0.603008432457717,
+                "color_name": "PANTONE 13-1027 Apricot Cream"
+            },
+            {
+                "rgb": [
+                    117,
+                    110,
+                    102
+                ],
+                "hex": "#776a5f",
+                "frequency": 0.5951276308530841,
+                "color_name": "PANTONE 18-1112 Walnut"
+            },
+            {
+                "rgb": [
+                    157,
+                    149,
+                    142
+                ],
+                "hex": "#9a9186",
+                "frequency": 0.33302742264739005,
+                "color_name": "PANTONE 16-0205 Vintage Khaki"
+            }
+        ],
+        "dress": [
+            {
+                "rgb": [
+                    234,
+                    217,
+                    207
+                ],
+                "hex": "#eeded1",
+                "frequency": 45.733827688097456,
+                "color_name": "PANTONE 12-1108 Dew"
+            },
+            {
+                "rgb": [
+                    244,
+                    229,
+                    220
+                ],
+                "hex": "#f6e5db",
+                "frequency": 38.05396006020743,
+                "color_name": "PANTONE 12-1106 Sheer Pink"
+            },
+            {
+                "rgb": [
+                    219,
+                    202,
+                    187
+                ],
+                "hex": "#dbcbbd",
+                "frequency": 23.570232508811067,
+                "color_name": "PANTONE 12-1404 Pink Tint"
+            },
+            {
+                "rgb": [
+                    250,
+                    233,
+                    228
+                ],
+                "hex": "#f5e3e2",
+                "frequency": 15.361669094366285,
+                "color_name": "PANTONE 11-2409 Delicacy"
+            },
+            {
+                "rgb": [
+                    232,
+                    208,
+                    195
+                ],
+                "hex": "#e9d4c3",
+                "frequency": 14.084835793416172,
+                "color_name": "PANTONE 12-1006 Mother Of Pearl"
+            },
+            {
+                "rgb": [
+                    212,
+                    186,
+                    169
+                ],
+                "hex": "#d8c0ad",
+                "frequency": 13.89205042274983,
+                "color_name": "PANTONE 14-1210 Shifting Sand"
+            },
+            {
+                "rgb": [
+                    204,
+                    135,
+                    113
+                ],
+                "hex": "#ce8477",
+                "frequency": 12.417465481600363,
+                "color_name": "PANTONE 16-1431 Canyon Clay"
+            },
+            {
+                "rgb": [
+                    133,
+                    88,
+                    65
+                ],
+                "hex": "#865e49",
+                "frequency": 11.779484643953593,
+                "color_name": "PANTONE 18-1137 Rawhide"
+            },
+            {
+                "rgb": [
+                    200,
+                    168,
+                    147
+                ],
+                "hex": "#c2a594",
+                "frequency": 11.172044262222421,
+                "color_name": "PANTONE 15-1315 Rugby Tan"
+            },
+            {
+                "rgb": [
+                    179,
+                    140,
+                    119
+                ],
+                "hex": "#ae8774",
+                "frequency": 10.940924753747142,
+                "color_name": "PANTONE 17-1227 Cafe Au Lait"
+            },
+            {
+                "rgb": [
+                    189,
+                    156,
+                    130
+                ],
+                "hex": "#b99984",
+                "frequency": 9.205004081914245,
+                "color_name": "PANTONE 16-1317 Brush"
+            },
+            {
+                "rgb": [
+                    166,
+                    126,
+                    101
+                ],
+                "hex": "#ae856c",
+                "frequency": 8.477733445250607,
+                "color_name": "PANTONE 17-1225 Tawny Birch"
+            },
+            {
+                "rgb": [
+                    207,
+                    194,
+                    184
+                ],
+                "hex": "#cabeb5",
+                "frequency": 8.020074461533744,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    154,
+                    112,
+                    87
+                ],
+                "hex": "#936b4f",
+                "frequency": 7.740689211098208,
+                "color_name": "PANTONE 18-1030 Thrush"
+            },
+            {
+                "rgb": [
+                    83,
+                    44,
+                    29
+                ],
+                "hex": "#66352b",
+                "frequency": 6.687740119365353,
+                "color_name": "PANTONE 19-1435 Cherry Mahogany"
+            },
+            {
+                "rgb": [
+                    225,
+                    185,
+                    172
+                ],
+                "hex": "#ddb6ab",
+                "frequency": 6.181039520623817,
+                "color_name": "PANTONE 14-1311 Evening Sand"
+            },
+            {
+                "rgb": [
+                    193,
+                    178,
+                    168
+                ],
+                "hex": "#bbb1a8",
+                "frequency": 5.233005317585851,
+                "color_name": "PANTONE 15-4503 Chateau Gray"
+            },
+            {
+                "rgb": [
+                    234,
+                    167,
+                    141
+                ],
+                "hex": "#edaa86",
+                "frequency": 5.220717145374142,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    212,
+                    169,
+                    157
+                ],
+                "hex": "#dbb0a2",
+                "frequency": 5.071566258754983,
+                "color_name": "PANTONE 14-1313 Rose Cloud"
+            },
+            {
+                "rgb": [
+                    107,
+                    62,
+                    42
+                ],
+                "hex": "#754734",
+                "frequency": 4.954639009302165,
+                "color_name": "PANTONE 19-1241 Tortoise Shell"
+            },
+            {
+                "rgb": [
+                    126,
+                    54,
+                    33
+                ],
+                "hex": "#8d3f2d",
+                "frequency": 4.742736526267128,
+                "color_name": "PANTONE 19-1250 Picante"
+            },
+            {
+                "rgb": [
+                    176,
+                    106,
+                    82
+                ],
+                "hex": "#b37256",
+                "frequency": 4.42262906785057,
+                "color_name": "PANTONE 16-1429 Sunburn"
+            },
+            {
+                "rgb": [
+                    173,
+                    158,
+                    148
+                ],
+                "hex": "#ad9f93",
+                "frequency": 3.1711312071507605,
+                "color_name": "PANTONE 16-0906 Simply Taupe"
+            },
+            {
+                "rgb": [
+                    140,
+                    111,
+                    100
+                ],
+                "hex": "#8f7265",
+                "frequency": 3.0525651410655104,
+                "color_name": "PANTONE 18-1321 Brownie"
+            },
+            {
+                "rgb": [
+                    111,
+                    90,
+                    81
+                ],
+                "hex": "#685a4e",
+                "frequency": 2.877271345086024,
+                "color_name": "PANTONE 19-0809 Chocolate Chip"
+            },
+            {
+                "rgb": [
+                    155,
+                    78,
+                    54
+                ],
+                "hex": "#a14d3a",
+                "frequency": 2.8652670324206926,
+                "color_name": "PANTONE 18-1350 Burnt Brick"
+            },
+            {
+                "rgb": [
+                    83,
+                    65,
+                    58
+                ],
+                "hex": "#4f3f3b",
+                "frequency": 2.818754902987916,
+                "color_name": "PANTONE 19-1015 Bracken"
+            },
+            {
+                "rgb": [
+                    54,
+                    42,
+                    36
+                ],
+                "hex": "#392d2b",
+                "frequency": 2.578556407039349,
+                "color_name": "PANTONE 19-1106 Mole"
+            },
+            {
+                "rgb": [
+                    50,
+                    20,
+                    12
+                ],
+                "hex": "#503130",
+                "frequency": 2.524662229936589,
+                "color_name": "PANTONE 19-1317 Bitter Chocolate"
+            },
+            {
+                "rgb": [
+                    150,
+                    135,
+                    127
+                ],
+                "hex": "#958b84",
+                "frequency": 2.475833220474111,
+                "color_name": "PANTONE 17-1210 Moon Rock"
+            },
+            {
+                "rgb": [
+                    29,
+                    23,
+                    20
+                ],
+                "hex": "#2b2929",
+                "frequency": 2.2737987098851313,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    116,
+                    84,
+                    70
+                ],
+                "hex": "#7a5747",
+                "frequency": 1.2568796936737345,
+                "color_name": "PANTONE 18-1130 Aztec"
+            },
+            {
+                "rgb": [
+                    89,
+                    78,
+                    71
+                ],
+                "hex": "#5b5149",
+                "frequency": 1.141211236187607,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            }
+        ],
+        "sunglasses": [
+            {
+                "rgb": [
+                    242,
+                    218,
+                    209
+                ],
+                "hex": "#f2d8cd",
+                "frequency": 18.908910240572965,
+                "color_name": "PANTONE 12-1209 Soft Pink"
+            },
+            {
+                "rgb": [
+                    249,
+                    230,
+                    221
+                ],
+                "hex": "#f6e5db",
+                "frequency": 17.98337898997907,
+                "color_name": "PANTONE 12-1106 Sheer Pink"
+            },
+            {
+                "rgb": [
+                    234,
+                    205,
+                    195
+                ],
+                "hex": "#edcdc2",
+                "frequency": 13.73989015255383,
+                "color_name": "PANTONE 13-1404 Pale Dogwood"
+            },
+            {
+                "rgb": [
+                    221,
+                    189,
+                    178
+                ],
+                "hex": "#e2bdb3",
+                "frequency": 9.508075660618632,
+                "color_name": "PANTONE 13-1208 Peachy Keen"
+            },
+            {
+                "rgb": [
+                    236,
+                    170,
+                    136
+                ],
+                "hex": "#edaa86",
+                "frequency": 6.178715224704002,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    174,
+                    118,
+                    94
+                ],
+                "hex": "#a36e51",
+                "frequency": 6.011201941742301,
+                "color_name": "PANTONE 17-1430 Pecan Brown"
+            },
+            {
+                "rgb": [
+                    183,
+                    137,
+                    121
+                ],
+                "hex": "#ae8774",
+                "frequency": 4.728924412685398,
+                "color_name": "PANTONE 17-1227 Cafe Au Lait"
+            },
+            {
+                "rgb": [
+                    219,
+                    147,
+                    110
+                ],
+                "hex": "#de8e65",
+                "frequency": 3.844117623103258,
+                "color_name": "PANTONE 16-1338 Copper Tan"
+            },
+            {
+                "rgb": [
+                    158,
+                    91,
+                    65
+                ],
+                "hex": "#985c41",
+                "frequency": 3.8400451770020827,
+                "color_name": "PANTONE 18-1239 Sierra"
+            },
+            {
+                "rgb": [
+                    202,
+                    164,
+                    150
+                ],
+                "hex": "#c5a193",
+                "frequency": 3.5289102948722473,
+                "color_name": "PANTONE 15-1511 Mahogany Rose"
+            },
+            {
+                "rgb": [
+                    72,
+                    39,
+                    28
+                ],
+                "hex": "#56352d",
+                "frequency": 3.0244699711399323,
+                "color_name": "PANTONE 19-1432 Chocolate Fondant"
+            },
+            {
+                "rgb": [
+                    120,
+                    59,
+                    40
+                ],
+                "hex": "#73362a",
+                "frequency": 2.82410562296208,
+                "color_name": "PANTONE 18-1541 Brandy Brown"
+            },
+            {
+                "rgb": [
+                    38,
+                    17,
+                    14
+                ],
+                "hex": "#34292a",
+                "frequency": 2.230342981410641,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    81,
+                    59,
+                    59
+                ],
+                "hex": "#503938",
+                "frequency": 1.9376698549394697,
+                "color_name": "PANTONE 19-1518 Puce"
+            },
+            {
+                "rgb": [
+                    114,
+                    91,
+                    93
+                ],
+                "hex": "#6c5656",
+                "frequency": 1.7112418517140924,
+                "color_name": "PANTONE 18-1409 Peppercorn"
+            }
+        ],
+        "shirt": [
+            {
+                "rgb": [
+                    242,
+                    218,
+                    209
+                ],
+                "hex": "#f2d8cd",
+                "frequency": 18.908910240572965,
+                "color_name": "PANTONE 12-1209 Soft Pink"
+            },
+            {
+                "rgb": [
+                    249,
+                    230,
+                    221
+                ],
+                "hex": "#f6e5db",
+                "frequency": 17.98337898997907,
+                "color_name": "PANTONE 12-1106 Sheer Pink"
+            },
+            {
+                "rgb": [
+                    234,
+                    205,
+                    195
+                ],
+                "hex": "#edcdc2",
+                "frequency": 13.73989015255383,
+                "color_name": "PANTONE 13-1404 Pale Dogwood"
+            },
+            {
+                "rgb": [
+                    221,
+                    189,
+                    178
+                ],
+                "hex": "#e2bdb3",
+                "frequency": 9.508075660618632,
+                "color_name": "PANTONE 13-1208 Peachy Keen"
+            },
+            {
+                "rgb": [
+                    236,
+                    170,
+                    136
+                ],
+                "hex": "#edaa86",
+                "frequency": 6.178715224704002,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    174,
+                    118,
+                    94
+                ],
+                "hex": "#a36e51",
+                "frequency": 6.011201941742301,
+                "color_name": "PANTONE 17-1430 Pecan Brown"
+            },
+            {
+                "rgb": [
+                    183,
+                    137,
+                    121
+                ],
+                "hex": "#ae8774",
+                "frequency": 4.728924412685398,
+                "color_name": "PANTONE 17-1227 Cafe Au Lait"
+            },
+            {
+                "rgb": [
+                    219,
+                    147,
+                    110
+                ],
+                "hex": "#de8e65",
+                "frequency": 3.844117623103258,
+                "color_name": "PANTONE 16-1338 Copper Tan"
+            },
+            {
+                "rgb": [
+                    158,
+                    91,
+                    65
+                ],
+                "hex": "#985c41",
+                "frequency": 3.8400451770020827,
+                "color_name": "PANTONE 18-1239 Sierra"
+            },
+            {
+                "rgb": [
+                    202,
+                    164,
+                    150
+                ],
+                "hex": "#c5a193",
+                "frequency": 3.5289102948722473,
+                "color_name": "PANTONE 15-1511 Mahogany Rose"
+            },
+            {
+                "rgb": [
+                    72,
+                    39,
+                    28
+                ],
+                "hex": "#56352d",
+                "frequency": 3.0244699711399323,
+                "color_name": "PANTONE 19-1432 Chocolate Fondant"
+            },
+            {
+                "rgb": [
+                    120,
+                    59,
+                    40
+                ],
+                "hex": "#73362a",
+                "frequency": 2.82410562296208,
+                "color_name": "PANTONE 18-1541 Brandy Brown"
+            },
+            {
+                "rgb": [
+                    38,
+                    17,
+                    14
+                ],
+                "hex": "#34292a",
+                "frequency": 2.230342981410641,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    81,
+                    59,
+                    59
+                ],
+                "hex": "#503938",
+                "frequency": 1.9376698549394697,
+                "color_name": "PANTONE 19-1518 Puce"
+            },
+            {
+                "rgb": [
+                    114,
+                    91,
+                    93
+                ],
+                "hex": "#6c5656",
+                "frequency": 1.7112418517140924,
+                "color_name": "PANTONE 18-1409 Peppercorn"
+            }
+        ],
+        "romper": [
+            {
+                "rgb": [
+                    235,
+                    217,
+                    208
+                ],
+                "hex": "#f3dfd7",
+                "frequency": 24.881116915364615,
+                "color_name": "PANTONE 11-1305 Angel Wing"
+            },
+            {
+                "rgb": [
+                    246,
+                    234,
+                    231
+                ],
+                "hex": "#f2e2e0",
+                "frequency": 18.268172128651408,
+                "color_name": "PANTONE 11-2309 Petal Pink"
+            },
+            {
+                "rgb": [
+                    224,
+                    148,
+                    108
+                ],
+                "hex": "#de8e65",
+                "frequency": 7.1528965307222,
+                "color_name": "PANTONE 16-1338 Copper Tan"
+            },
+            {
+                "rgb": [
+                    219,
+                    193,
+                    181
+                ],
+                "hex": "#dbbeb7",
+                "frequency": 6.80581258247636,
+                "color_name": "PANTONE 14-1309 Peach Whip"
+            },
+            {
+                "rgb": [
+                    237,
+                    171,
+                    137
+                ],
+                "hex": "#edaa86",
+                "frequency": 5.82898014320629,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    181,
+                    151,
+                    138
+                ],
+                "hex": "#af9483",
+                "frequency": 5.72590909445837,
+                "color_name": "PANTONE 16-1318 Warm Taupe"
+            },
+            {
+                "rgb": [
+                    163,
+                    130,
+                    116
+                ],
+                "hex": "#a28776",
+                "frequency": 5.118805000507547,
+                "color_name": "PANTONE 16-1414 Chanterelle"
+            },
+            {
+                "rgb": [
+                    198,
+                    173,
+                    163
+                ],
+                "hex": "#cdb2a5",
+                "frequency": 5.091865976402977,
+                "color_name": "PANTONE 14-1307 Rose Dust"
+            },
+            {
+                "rgb": [
+                    41,
+                    19,
+                    15
+                ],
+                "hex": "#34292a",
+                "frequency": 4.161493593197311,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    193,
+                    115,
+                    77
+                ],
+                "hex": "#b9714f",
+                "frequency": 3.8651643280470376,
+                "color_name": "PANTONE 17-1436 Raw Sienna"
+            },
+            {
+                "rgb": [
+                    74,
+                    47,
+                    39
+                ],
+                "hex": "#4a342e",
+                "frequency": 3.8370540420248775,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    129,
+                    107,
+                    100
+                ],
+                "hex": "#7b6660",
+                "frequency": 3.72070869154427,
+                "color_name": "PANTONE 18-1312 Deep Taupe"
+            },
+            {
+                "rgb": [
+                    94,
+                    80,
+                    76
+                ],
+                "hex": "#5b5149",
+                "frequency": 2.9441620401820923,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            },
+            {
+                "rgb": [
+                    136,
+                    71,
+                    46
+                ],
+                "hex": "#8c4a2f",
+                "frequency": 2.5978589332146456,
+                "color_name": "PANTONE 18-1244 Ginger Bread"
+            }
+        ],
+        "trench coat": [
+            {
+                "rgb": [
+                    235,
+                    217,
+                    208
+                ],
+                "hex": "#f3dfd7",
+                "frequency": 24.881116915364615,
+                "color_name": "PANTONE 11-1305 Angel Wing"
+            },
+            {
+                "rgb": [
+                    246,
+                    234,
+                    231
+                ],
+                "hex": "#f2e2e0",
+                "frequency": 18.268172128651408,
+                "color_name": "PANTONE 11-2309 Petal Pink"
+            },
+            {
+                "rgb": [
+                    224,
+                    148,
+                    108
+                ],
+                "hex": "#de8e65",
+                "frequency": 7.1528965307222,
+                "color_name": "PANTONE 16-1338 Copper Tan"
+            },
+            {
+                "rgb": [
+                    219,
+                    193,
+                    181
+                ],
+                "hex": "#dbbeb7",
+                "frequency": 6.80581258247636,
+                "color_name": "PANTONE 14-1309 Peach Whip"
+            },
+            {
+                "rgb": [
+                    237,
+                    171,
+                    137
+                ],
+                "hex": "#edaa86",
+                "frequency": 5.82898014320629,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    181,
+                    151,
+                    138
+                ],
+                "hex": "#af9483",
+                "frequency": 5.72590909445837,
+                "color_name": "PANTONE 16-1318 Warm Taupe"
+            },
+            {
+                "rgb": [
+                    163,
+                    130,
+                    116
+                ],
+                "hex": "#a28776",
+                "frequency": 5.118805000507547,
+                "color_name": "PANTONE 16-1414 Chanterelle"
+            },
+            {
+                "rgb": [
+                    198,
+                    173,
+                    163
+                ],
+                "hex": "#cdb2a5",
+                "frequency": 5.091865976402977,
+                "color_name": "PANTONE 14-1307 Rose Dust"
+            },
+            {
+                "rgb": [
+                    41,
+                    19,
+                    15
+                ],
+                "hex": "#34292a",
+                "frequency": 4.161493593197311,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    193,
+                    115,
+                    77
+                ],
+                "hex": "#b9714f",
+                "frequency": 3.8651643280470376,
+                "color_name": "PANTONE 17-1436 Raw Sienna"
+            },
+            {
+                "rgb": [
+                    74,
+                    47,
+                    39
+                ],
+                "hex": "#4a342e",
+                "frequency": 3.8370540420248775,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    129,
+                    107,
+                    100
+                ],
+                "hex": "#7b6660",
+                "frequency": 3.72070869154427,
+                "color_name": "PANTONE 18-1312 Deep Taupe"
+            },
+            {
+                "rgb": [
+                    94,
+                    80,
+                    76
+                ],
+                "hex": "#5b5149",
+                "frequency": 2.9441620401820923,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            },
+            {
+                "rgb": [
+                    136,
+                    71,
+                    46
+                ],
+                "hex": "#8c4a2f",
+                "frequency": 2.5978589332146456,
+                "color_name": "PANTONE 18-1244 Ginger Bread"
+            }
+        ],
+        "wide-leg pants": [
+            {
+                "rgb": [
+                    13,
+                    13,
+                    11
+                ],
+                "hex": "#26262a",
+                "frequency": 67.0109644830067,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    235,
+                    217,
+                    208
+                ],
+                "hex": "#f3dfd7",
+                "frequency": 24.881116915364615,
+                "color_name": "PANTONE 11-1305 Angel Wing"
+            },
+            {
+                "rgb": [
+                    158,
+                    158,
+                    158
+                ],
+                "hex": "#a2a2a1",
+                "frequency": 21.855625236331985,
+                "color_name": "PANTONE 14-5002 Silver"
+            },
+            {
+                "rgb": [
+                    181,
+                    181,
+                    181
+                ],
+                "hex": "#afb1b4",
+                "frequency": 20.90708674899938,
+                "color_name": "PANTONE 14-4202 Harbor Mist"
+            },
+            {
+                "rgb": [
+                    136,
+                    136,
+                    135
+                ],
+                "hex": "#8b8c89",
+                "frequency": 18.69109536753637,
+                "color_name": "PANTONE 17-1501 Wild Dove"
+            },
+            {
+                "rgb": [
+                    246,
+                    234,
+                    231
+                ],
+                "hex": "#f2e2e0",
+                "frequency": 18.268172128651408,
+                "color_name": "PANTONE 11-2309 Petal Pink"
+            },
+            {
+                "rgb": [
+                    29,
+                    27,
+                    24
+                ],
+                "hex": "#2b2929",
+                "frequency": 14.061336374075811,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    115,
+                    112,
+                    109
+                ],
+                "hex": "#73706f",
+                "frequency": 13.055263330003358,
+                "color_name": "PANTONE 18-5102 Brushed Nickel"
+            },
+            {
+                "rgb": [
+                    89,
+                    85,
+                    82
+                ],
+                "hex": "#5c5658",
+                "frequency": 12.254393699036426,
+                "color_name": "PANTONE 18-5210 Eiffel Tower"
+            },
+            {
+                "rgb": [
+                    41,
+                    37,
+                    34
+                ],
+                "hex": "#2b2929",
+                "frequency": 10.547126829115344,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    224,
+                    148,
+                    108
+                ],
+                "hex": "#de8e65",
+                "frequency": 7.1528965307222,
+                "color_name": "PANTONE 16-1338 Copper Tan"
+            },
+            {
+                "rgb": [
+                    219,
+                    193,
+                    181
+                ],
+                "hex": "#dbbeb7",
+                "frequency": 6.80581258247636,
+                "color_name": "PANTONE 14-1309 Peach Whip"
+            },
+            {
+                "rgb": [
+                    65,
+                    48,
+                    41
+                ],
+                "hex": "#40342b",
+                "frequency": 6.616180594987678,
+                "color_name": "PANTONE 19-0712 Demitasse"
+            },
+            {
+                "rgb": [
+                    237,
+                    171,
+                    137
+                ],
+                "hex": "#edaa86",
+                "frequency": 5.82898014320629,
+                "color_name": "PANTONE 14-1224 Coral Sands"
+            },
+            {
+                "rgb": [
+                    181,
+                    151,
+                    138
+                ],
+                "hex": "#af9483",
+                "frequency": 5.72590909445837,
+                "color_name": "PANTONE 16-1318 Warm Taupe"
+            },
+            {
+                "rgb": [
+                    185,
+                    116,
+                    78
+                ],
+                "hex": "#b9714f",
+                "frequency": 5.680545110585215,
+                "color_name": "PANTONE 17-1436 Raw Sienna"
+            },
+            {
+                "rgb": [
+                    202,
+                    202,
+                    201
+                ],
+                "hex": "#cacccb",
+                "frequency": 5.330579396845102,
+                "color_name": "PANTONE 13-4303 Dawn Blue"
+            },
+            {
+                "rgb": [
+                    163,
+                    130,
+                    116
+                ],
+                "hex": "#a28776",
+                "frequency": 5.118805000507547,
+                "color_name": "PANTONE 16-1414 Chanterelle"
+            },
+            {
+                "rgb": [
+                    198,
+                    173,
+                    163
+                ],
+                "hex": "#cdb2a5",
+                "frequency": 5.091865976402977,
+                "color_name": "PANTONE 14-1307 Rose Dust"
+            },
+            {
+                "rgb": [
+                    41,
+                    19,
+                    15
+                ],
+                "hex": "#34292a",
+                "frequency": 4.161493593197311,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    129,
+                    107,
+                    100
+                ],
+                "hex": "#7b6660",
+                "frequency": 3.72070869154427,
+                "color_name": "PANTONE 18-1312 Deep Taupe"
+            },
+            {
+                "rgb": [
+                    66,
+                    66,
+                    64
+                ],
+                "hex": "#413e3d",
+                "frequency": 3.366080920071631,
+                "color_name": "PANTONE 19-0000 Raven"
+            },
+            {
+                "rgb": [
+                    51,
+                    51,
+                    49
+                ],
+                "hex": "#363838",
+                "frequency": 3.027546499432803,
+                "color_name": "PANTONE 19-4305 Pirate Black"
+            },
+            {
+                "rgb": [
+                    136,
+                    71,
+                    46
+                ],
+                "hex": "#8c4a2f",
+                "frequency": 2.5978589332146456,
+                "color_name": "PANTONE 18-1244 Ginger Bread"
+            },
+            {
+                "rgb": [
+                    143,
+                    91,
+                    59
+                ],
+                "hex": "#8b593e",
+                "frequency": 1.9437615828717132,
+                "color_name": "PANTONE 17-1142 Argan Oil"
+            },
+            {
+                "rgb": [
+                    112,
+                    71,
+                    42
+                ],
+                "hex": "#704822",
+                "frequency": 1.7536054667341194,
+                "color_name": "PANTONE 18-1048 Monks Robe"
+            },
+            {
+                "rgb": [
+                    82,
+                    48,
+                    27
+                ],
+                "hex": "#54392d",
+                "frequency": 1.4299841621309688,
+                "color_name": "PANTONE 19-1218 Potting Soil"
+            },
+            {
+                "rgb": [
+                    211,
+                    150,
+                    104
+                ],
+                "hex": "#dd9c6b",
+                "frequency": 1.2548269909828376,
+                "color_name": "PANTONE 15-1234 Gold Earth"
+            },
+            {
+                "rgb": [
+                    85,
+                    77,
+                    69
+                ],
+                "hex": "#5b5149",
+                "frequency": 0.9243417624014582,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            },
+            {
+                "rgb": [
+                    235,
+                    184,
+                    138
+                ],
+                "hex": "#f1bd89",
+                "frequency": 0.603008432457717,
+                "color_name": "PANTONE 13-1027 Apricot Cream"
+            },
+            {
+                "rgb": [
+                    157,
+                    149,
+                    142
+                ],
+                "hex": "#9a9186",
+                "frequency": 0.33302742264739005,
+                "color_name": "PANTONE 16-0205 Vintage Khaki"
+            }
+        ],
+        "slip dress": [
+            {
+                "rgb": [
+                    15,
+                    14,
+                    13
+                ],
+                "hex": "#26262a",
+                "frequency": 67.55137714967101,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    230,
+                    218,
+                    206
+                ],
+                "hex": "#eeded1",
+                "frequency": 34.718903877161466,
+                "color_name": "PANTONE 12-1108 Dew"
+            },
+            {
+                "rgb": [
+                    33,
+                    30,
+                    30
+                ],
+                "hex": "#26262a",
+                "frequency": 32.470142652075076,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    219,
+                    202,
+                    187
+                ],
+                "hex": "#dbcbbd",
+                "frequency": 23.570232508811067,
+                "color_name": "PANTONE 12-1404 Pink Tint"
+            },
+            {
+                "rgb": [
+                    160,
+                    113,
+                    91
+                ],
+                "hex": "#a47864",
+                "frequency": 20.91766283821739,
+                "color_name": "PANTONE 17-1230 Mocha Mousse"
+            },
+            {
+                "rgb": [
+                    243,
+                    231,
+                    220
+                ],
+                "hex": "#f1e8df",
+                "frequency": 18.82570687003569,
+                "color_name": "PANTONE 11-0604 Gardenia"
+            },
+            {
+                "rgb": [
+                    59,
+                    43,
+                    37
+                ],
+                "hex": "#392d2b",
+                "frequency": 17.99679100971056,
+                "color_name": "PANTONE 19-1106 Mole"
+            },
+            {
+                "rgb": [
+                    180,
+                    138,
+                    116
+                ],
+                "hex": "#b38b71",
+                "frequency": 17.60435693607739,
+                "color_name": "PANTONE 16-1323 Macaroon"
+            },
+            {
+                "rgb": [
+                    212,
+                    186,
+                    169
+                ],
+                "hex": "#d8c0ad",
+                "frequency": 13.89205042274983,
+                "color_name": "PANTONE 14-1210 Shifting Sand"
+            },
+            {
+                "rgb": [
+                    89,
+                    64,
+                    55
+                ],
+                "hex": "#584039",
+                "frequency": 12.609972883565232,
+                "color_name": "PANTONE 19-1118 Chestnut"
+            },
+            {
+                "rgb": [
+                    133,
+                    88,
+                    65
+                ],
+                "hex": "#865e49",
+                "frequency": 11.779484643953593,
+                "color_name": "PANTONE 18-1137 Rawhide"
+            },
+            {
+                "rgb": [
+                    189,
+                    154,
+                    132
+                ],
+                "hex": "#b99984",
+                "frequency": 11.516279809870444,
+                "color_name": "PANTONE 16-1317 Brush"
+            },
+            {
+                "rgb": [
+                    200,
+                    168,
+                    147
+                ],
+                "hex": "#c2a594",
+                "frequency": 11.172044262222421,
+                "color_name": "PANTONE 15-1315 Rugby Tan"
+            },
+            {
+                "rgb": [
+                    82,
+                    55,
+                    46
+                ],
+                "hex": "#54392d",
+                "frequency": 8.853020298361457,
+                "color_name": "PANTONE 19-1218 Potting Soil"
+            },
+            {
+                "rgb": [
+                    207,
+                    191,
+                    179
+                ],
+                "hex": "#cabeb5",
+                "frequency": 8.746255639990501,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    108,
+                    72,
+                    60
+                ],
+                "hex": "#6e493a",
+                "frequency": 8.50590490616051,
+                "color_name": "PANTONE 19-1230 Friar Brown"
+            },
+            {
+                "rgb": [
+                    166,
+                    126,
+                    101
+                ],
+                "hex": "#ae856c",
+                "frequency": 8.477733445250607,
+                "color_name": "PANTONE 17-1225 Tawny Birch"
+            },
+            {
+                "rgb": [
+                    231,
+                    214,
+                    198
+                ],
+                "hex": "#e9d4c3",
+                "frequency": 8.313307040439696,
+                "color_name": "PANTONE 12-1006 Mother Of Pearl"
+            },
+            {
+                "rgb": [
+                    124,
+                    83,
+                    67
+                ],
+                "hex": "#7a5747",
+                "frequency": 7.263784031114162,
+                "color_name": "PANTONE 18-1130 Aztec"
+            },
+            {
+                "rgb": [
+                    140,
+                    95,
+                    76
+                ],
+                "hex": "#8f5f50",
+                "frequency": 6.224015651748594,
+                "color_name": "PANTONE 18-1235 Russet"
+            },
+            {
+                "rgb": [
+                    162,
+                    154,
+                    149
+                ],
+                "hex": "#a09c98",
+                "frequency": 5.642470391629827,
+                "color_name": "PANTONE 16-5803 Flint Gray"
+            },
+            {
+                "rgb": [
+                    193,
+                    178,
+                    168
+                ],
+                "hex": "#bbb1a8",
+                "frequency": 5.233005317585851,
+                "color_name": "PANTONE 15-4503 Chateau Gray"
+            },
+            {
+                "rgb": [
+                    107,
+                    62,
+                    42
+                ],
+                "hex": "#754734",
+                "frequency": 4.954639009302165,
+                "color_name": "PANTONE 19-1241 Tortoise Shell"
+            },
+            {
+                "rgb": [
+                    61,
+                    61,
+                    60
+                ],
+                "hex": "#413e3d",
+                "frequency": 4.929555284928401,
+                "color_name": "PANTONE 19-0000 Raven"
+            },
+            {
+                "rgb": [
+                    140,
+                    111,
+                    100
+                ],
+                "hex": "#8f7265",
+                "frequency": 3.0525651410655104,
+                "color_name": "PANTONE 18-1321 Brownie"
+            },
+            {
+                "rgb": [
+                    111,
+                    90,
+                    81
+                ],
+                "hex": "#685a4e",
+                "frequency": 2.877271345086024,
+                "color_name": "PANTONE 19-0809 Chocolate Chip"
+            },
+            {
+                "rgb": [
+                    186,
+                    186,
+                    185
+                ],
+                "hex": "#bbbcbc",
+                "frequency": 2.859782471759123,
+                "color_name": "PANTONE 14-4103 Gray Violet"
+            },
+            {
+                "rgb": [
+                    77,
+                    46,
+                    32
+                ],
+                "hex": "#56352d",
+                "frequency": 2.7670779243178605,
+                "color_name": "PANTONE 19-1432 Chocolate Fondant"
+            },
+            {
+                "rgb": [
+                    150,
+                    135,
+                    127
+                ],
+                "hex": "#958b84",
+                "frequency": 2.475833220474111,
+                "color_name": "PANTONE 17-1210 Moon Rock"
+            },
+            {
+                "rgb": [
+                    170,
+                    170,
+                    170
+                ],
+                "hex": "#abafae",
+                "frequency": 2.288928316465796,
+                "color_name": "PANTONE 15-4703 Mirage Gray"
+            },
+            {
+                "rgb": [
+                    29,
+                    23,
+                    20
+                ],
+                "hex": "#2b2929",
+                "frequency": 2.2737987098851313,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    130,
+                    129,
+                    128
+                ],
+                "hex": "#848283",
+                "frequency": 2.215176584218704,
+                "color_name": "PANTONE 17-0000 Frost Gray"
+            },
+            {
+                "rgb": [
+                    209,
+                    209,
+                    209
+                ],
+                "hex": "#cacccb",
+                "frequency": 2.21097719732919,
+                "color_name": "PANTONE 13-4303 Dawn Blue"
+            },
+            {
+                "rgb": [
+                    88,
+                    87,
+                    86
+                ],
+                "hex": "#5c5d5b",
+                "frequency": 2.0868328224079287,
+                "color_name": "PANTONE 18-0306 Gunmetal"
+            },
+            {
+                "rgb": [
+                    108,
+                    107,
+                    106
+                ],
+                "hex": "#6c6868",
+                "frequency": 1.9818481501700753,
+                "color_name": "PANTONE 18-0601 Charcoal Gray"
+            },
+            {
+                "rgb": [
+                    89,
+                    78,
+                    71
+                ],
+                "hex": "#5b5149",
+                "frequency": 1.141211236187607,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            }
+        ],
+        "mini dress": [
+            {
+                "rgb": [
+                    15,
+                    15,
+                    15
+                ],
+                "hex": "#26262a",
+                "frequency": 64.55533742073656,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    230,
+                    218,
+                    206
+                ],
+                "hex": "#eeded1",
+                "frequency": 34.718903877161466,
+                "color_name": "PANTONE 12-1108 Dew"
+            },
+            {
+                "rgb": [
+                    32,
+                    31,
+                    31
+                ],
+                "hex": "#26262a",
+                "frequency": 14.400222567505145,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    218,
+                    204,
+                    192
+                ],
+                "hex": "#dacbbe",
+                "frequency": 13.313129403106739,
+                "color_name": "PANTONE 13-1107 Whisper Pink"
+            },
+            {
+                "rgb": [
+                    244,
+                    232,
+                    221
+                ],
+                "hex": "#f1e8df",
+                "frequency": 12.174486320184595,
+                "color_name": "PANTONE 11-0604 Gardenia"
+            },
+            {
+                "rgb": [
+                    207,
+                    194,
+                    184
+                ],
+                "hex": "#cabeb5",
+                "frequency": 8.020074461533744,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    162,
+                    154,
+                    149
+                ],
+                "hex": "#a09c98",
+                "frequency": 5.642470391629827,
+                "color_name": "PANTONE 16-5803 Flint Gray"
+            },
+            {
+                "rgb": [
+                    193,
+                    178,
+                    168
+                ],
+                "hex": "#bbb1a8",
+                "frequency": 5.233005317585851,
+                "color_name": "PANTONE 15-4503 Chateau Gray"
+            },
+            {
+                "rgb": [
+                    61,
+                    61,
+                    60
+                ],
+                "hex": "#413e3d",
+                "frequency": 4.929555284928401,
+                "color_name": "PANTONE 19-0000 Raven"
+            },
+            {
+                "rgb": [
+                    214,
+                    186,
+                    173
+                ],
+                "hex": "#d7b8ab",
+                "frequency": 4.274255576310296,
+                "color_name": "PANTONE 14-1310 Cameo Rose"
+            },
+            {
+                "rgb": [
+                    140,
+                    111,
+                    100
+                ],
+                "hex": "#8f7265",
+                "frequency": 3.0525651410655104,
+                "color_name": "PANTONE 18-1321 Brownie"
+            },
+            {
+                "rgb": [
+                    111,
+                    90,
+                    81
+                ],
+                "hex": "#685a4e",
+                "frequency": 2.877271345086024,
+                "color_name": "PANTONE 19-0809 Chocolate Chip"
+            },
+            {
+                "rgb": [
+                    186,
+                    186,
+                    185
+                ],
+                "hex": "#bbbcbc",
+                "frequency": 2.859782471759123,
+                "color_name": "PANTONE 14-4103 Gray Violet"
+            },
+            {
+                "rgb": [
+                    83,
+                    65,
+                    58
+                ],
+                "hex": "#4f3f3b",
+                "frequency": 2.818754902987916,
+                "color_name": "PANTONE 19-1015 Bracken"
+            },
+            {
+                "rgb": [
+                    200,
+                    163,
+                    147
+                ],
+                "hex": "#c5a193",
+                "frequency": 2.6759134569929706,
+                "color_name": "PANTONE 15-1511 Mahogany Rose"
+            },
+            {
+                "rgb": [
+                    180,
+                    138,
+                    121
+                ],
+                "hex": "#ae8774",
+                "frequency": 2.616119363320667,
+                "color_name": "PANTONE 17-1227 Cafe Au Lait"
+            },
+            {
+                "rgb": [
+                    54,
+                    42,
+                    36
+                ],
+                "hex": "#392d2b",
+                "frequency": 2.578556407039349,
+                "color_name": "PANTONE 19-1106 Mole"
+            },
+            {
+                "rgb": [
+                    150,
+                    135,
+                    127
+                ],
+                "hex": "#958b84",
+                "frequency": 2.475833220474111,
+                "color_name": "PANTONE 17-1210 Moon Rock"
+            },
+            {
+                "rgb": [
+                    170,
+                    170,
+                    170
+                ],
+                "hex": "#abafae",
+                "frequency": 2.288928316465796,
+                "color_name": "PANTONE 15-4703 Mirage Gray"
+            },
+            {
+                "rgb": [
+                    130,
+                    129,
+                    128
+                ],
+                "hex": "#848283",
+                "frequency": 2.215176584218704,
+                "color_name": "PANTONE 17-0000 Frost Gray"
+            },
+            {
+                "rgb": [
+                    209,
+                    209,
+                    209
+                ],
+                "hex": "#cacccb",
+                "frequency": 2.21097719732919,
+                "color_name": "PANTONE 13-4303 Dawn Blue"
+            },
+            {
+                "rgb": [
+                    88,
+                    87,
+                    86
+                ],
+                "hex": "#5c5d5b",
+                "frequency": 2.0868328224079287,
+                "color_name": "PANTONE 18-0306 Gunmetal"
+            },
+            {
+                "rgb": [
+                    108,
+                    107,
+                    106
+                ],
+                "hex": "#6c6868",
+                "frequency": 1.9818481501700753,
+                "color_name": "PANTONE 18-0601 Charcoal Gray"
+            }
+        ],
+        "maxi dress": [
+            {
+                "rgb": [
+                    133,
+                    88,
+                    65
+                ],
+                "hex": "#865e49",
+                "frequency": 11.779484643953593,
+                "color_name": "PANTONE 18-1137 Rawhide"
+            },
+            {
+                "rgb": [
+                    220,
+                    201,
+                    181
+                ],
+                "hex": "#dacab7",
+                "frequency": 10.257103105704331,
+                "color_name": "PANTONE 13-1308 Brazilian Sand"
+            },
+            {
+                "rgb": [
+                    210,
+                    187,
+                    164
+                ],
+                "hex": "#d1b7a0",
+                "frequency": 9.617794846439535,
+                "color_name": "PANTONE 14-1212 Frappe"
+            },
+            {
+                "rgb": [
+                    189,
+                    156,
+                    130
+                ],
+                "hex": "#b99984",
+                "frequency": 9.205004081914245,
+                "color_name": "PANTONE 16-1317 Brush"
+            },
+            {
+                "rgb": [
+                    201,
+                    172,
+                    147
+                ],
+                "hex": "#cfb095",
+                "frequency": 8.49613080522945,
+                "color_name": "PANTONE 14-1315 Hazelnut"
+            },
+            {
+                "rgb": [
+                    166,
+                    126,
+                    101
+                ],
+                "hex": "#ae856c",
+                "frequency": 8.477733445250607,
+                "color_name": "PANTONE 17-1225 Tawny Birch"
+            },
+            {
+                "rgb": [
+                    177,
+                    141,
+                    116
+                ],
+                "hex": "#b38b71",
+                "frequency": 8.324805390426473,
+                "color_name": "PANTONE 16-1323 Macaroon"
+            },
+            {
+                "rgb": [
+                    231,
+                    214,
+                    198
+                ],
+                "hex": "#e9d4c3",
+                "frequency": 8.313307040439696,
+                "color_name": "PANTONE 12-1006 Mother Of Pearl"
+            },
+            {
+                "rgb": [
+                    154,
+                    112,
+                    87
+                ],
+                "hex": "#936b4f",
+                "frequency": 7.740689211098208,
+                "color_name": "PANTONE 18-1030 Thrush"
+            },
+            {
+                "rgb": [
+                    243,
+                    230,
+                    218
+                ],
+                "hex": "#f2e8da",
+                "frequency": 6.651220549851096,
+                "color_name": "PANTONE 11-0606 Pristine"
+            },
+            {
+                "rgb": [
+                    107,
+                    62,
+                    42
+                ],
+                "hex": "#754734",
+                "frequency": 4.954639009302165,
+                "color_name": "PANTONE 19-1241 Tortoise Shell"
+            },
+            {
+                "rgb": [
+                    77,
+                    46,
+                    32
+                ],
+                "hex": "#56352d",
+                "frequency": 2.7670779243178605,
+                "color_name": "PANTONE 19-1432 Chocolate Fondant"
+            },
+            {
+                "rgb": [
+                    29,
+                    23,
+                    20
+                ],
+                "hex": "#2b2929",
+                "frequency": 2.2737987098851313,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    89,
+                    78,
+                    71
+                ],
+                "hex": "#5b5149",
+                "frequency": 1.141211236187607,
+                "color_name": "PANTONE 19-0810 Major Brown"
+            }
+        ],
+        "turtleneck": [
+            {
+                "rgb": [
+                    234,
+                    234,
+                    235
+                ],
+                "hex": "#e7e9e7",
+                "frequency": 19.18406135683152,
+                "color_name": "PANTONE 11-4800 Blanc De Blanc"
+            },
+            {
+                "rgb": [
+                    210,
+                    211,
+                    217
+                ],
+                "hex": "#d5d5d8",
+                "frequency": 15.576636644137078,
+                "color_name": "PANTONE 13-4108 Nimbus Cloud"
+            },
+            {
+                "rgb": [
+                    218,
+                    202,
+                    193
+                ],
+                "hex": "#dfcdc6",
+                "frequency": 7.667167211377087,
+                "color_name": "PANTONE 12-2901 Morganite"
+            },
+            {
+                "rgb": [
+                    202,
+                    182,
+                    174
+                ],
+                "hex": "#d4bab6",
+                "frequency": 6.90614634384071,
+                "color_name": "PANTONE 14-1803 Sepia Rose"
+            },
+            {
+                "rgb": [
+                    24,
+                    24,
+                    28
+                ],
+                "hex": "#26262a",
+                "frequency": 6.876144120325669,
+                "color_name": "PANTONE 19-3911 Black Beauty"
+            },
+            {
+                "rgb": [
+                    41,
+                    41,
+                    37
+                ],
+                "hex": "#2b2929",
+                "frequency": 6.727199071606322,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    61,
+                    58,
+                    45
+                ],
+                "hex": "#36362d",
+                "frequency": 5.988413354492262,
+                "color_name": "PANTONE 19-0509 Rosin"
+            },
+            {
+                "rgb": [
+                    82,
+                    75,
+                    57
+                ],
+                "hex": "#535040",
+                "frequency": 5.482639830160001,
+                "color_name": "PANTONE 19-0515 Olive Night"
+            },
+            {
+                "rgb": [
+                    158,
+                    125,
+                    106
+                ],
+                "hex": "#997867",
+                "frequency": 5.477614076982356,
+                "color_name": "PANTONE 17-1417 Beaver Fur"
+            },
+            {
+                "rgb": [
+                    187,
+                    164,
+                    153
+                ],
+                "hex": "#bba5a0",
+                "frequency": 4.945188831253484,
+                "color_name": "PANTONE 16-1509 Shadow Gray"
+            },
+            {
+                "rgb": [
+                    103,
+                    93,
+                    74
+                ],
+                "hex": "#695e4b",
+                "frequency": 4.64866939377233,
+                "color_name": "PANTONE 18-0820 Capers"
+            },
+            {
+                "rgb": [
+                    171,
+                    144,
+                    130
+                ],
+                "hex": "#a58d7f",
+                "frequency": 4.6466895516114395,
+                "color_name": "PANTONE 16-1412 Stucco"
+            },
+            {
+                "rgb": [
+                    128,
+                    109,
+                    89
+                ],
+                "hex": "#816d5e",
+                "frequency": 4.052127721140755,
+                "color_name": "PANTONE 18-1017 Caribou"
+            },
+            {
+                "rgb": [
+                    127,
+                    124,
+                    119
+                ],
+                "hex": "#827e7c",
+                "frequency": 1.8213024924689851,
+                "color_name": "PANTONE 17-1500 Steeple Gray"
+            }
+        ],
+        "skirt": [
+            {
+                "rgb": [
+                    186,
+                    54,
+                    43
+                ],
+                "hex": "#bc322c",
+                "frequency": 27.7235979417923,
+                "color_name": "PANTONE 18-1549 Valiant Poppy"
+            },
+            {
+                "rgb": [
+                    158,
+                    158,
+                    158
+                ],
+                "hex": "#a2a2a1",
+                "frequency": 21.855625236331985,
+                "color_name": "PANTONE 14-5002 Silver"
+            },
+            {
+                "rgb": [
+                    181,
+                    181,
+                    181
+                ],
+                "hex": "#afb1b4",
+                "frequency": 20.90708674899938,
+                "color_name": "PANTONE 14-4202 Harbor Mist"
+            },
+            {
+                "rgb": [
+                    136,
+                    136,
+                    135
+                ],
+                "hex": "#8b8c89",
+                "frequency": 18.69109536753637,
+                "color_name": "PANTONE 17-1501 Wild Dove"
+            },
+            {
+                "rgb": [
+                    114,
+                    114,
+                    112
+                ],
+                "hex": "#73706f",
+                "frequency": 12.460135699150275,
+                "color_name": "PANTONE 18-5102 Brushed Nickel"
+            },
+            {
+                "rgb": [
+                    202,
+                    180,
+                    165
+                ],
+                "hex": "#c5b1a0",
+                "frequency": 11.154034262892534,
+                "color_name": "PANTONE 15-1309 Moonlight"
+            },
+            {
+                "rgb": [
+                    90,
+                    88,
+                    85
+                ],
+                "hex": "#5c5d5b",
+                "frequency": 10.949450297218766,
+                "color_name": "PANTONE 18-0306 Gunmetal"
+            },
+            {
+                "rgb": [
+                    207,
+                    191,
+                    180
+                ],
+                "hex": "#cabeb5",
+                "frequency": 10.134171161201477,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    196,
+                    168,
+                    152
+                ],
+                "hex": "#c2a594",
+                "frequency": 8.047114294536465,
+                "color_name": "PANTONE 15-1315 Rugby Tan"
+            },
+            {
+                "rgb": [
+                    53,
+                    41,
+                    41
+                ],
+                "hex": "#34292a",
+                "frequency": 7.620462172657752,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    189,
+                    156,
+                    138
+                ],
+                "hex": "#b99984",
+                "frequency": 6.455902471787543,
+                "color_name": "PANTONE 16-1317 Brush"
+            },
+            {
+                "rgb": [
+                    175,
+                    143,
+                    126
+                ],
+                "hex": "#b09080",
+                "frequency": 6.339153502356392,
+                "color_name": "PANTONE 16-1221 Roebuck"
+            },
+            {
+                "rgb": [
+                    202,
+                    202,
+                    201
+                ],
+                "hex": "#cacccb",
+                "frequency": 5.330579396845102,
+                "color_name": "PANTONE 13-4303 Dawn Blue"
+            },
+            {
+                "rgb": [
+                    34,
+                    26,
+                    24
+                ],
+                "hex": "#2e272a",
+                "frequency": 4.881108972103075,
+                "color_name": "PANTONE 19-3909 Black Bean"
+            },
+            {
+                "rgb": [
+                    77,
+                    53,
+                    45
+                ],
+                "hex": "#4a342e",
+                "frequency": 4.044743253690101,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    170,
+                    129,
+                    107
+                ],
+                "hex": "#ab856f",
+                "frequency": 3.7823961486363133,
+                "color_name": "PANTONE 17-1226 Tawny Brown"
+            },
+            {
+                "rgb": [
+                    66,
+                    66,
+                    64
+                ],
+                "hex": "#413e3d",
+                "frequency": 3.366080920071631,
+                "color_name": "PANTONE 19-0000 Raven"
+            },
+            {
+                "rgb": [
+                    51,
+                    51,
+                    49
+                ],
+                "hex": "#363838",
+                "frequency": 3.027546499432803,
+                "color_name": "PANTONE 19-4305 Pirate Black"
+            },
+            {
+                "rgb": [
+                    38,
+                    38,
+                    36
+                ],
+                "hex": "#2b2929",
+                "frequency": 2.9055456860940474,
+                "color_name": "PANTONE 19-4008 Meteorite"
+            },
+            {
+                "rgb": [
+                    156,
+                    110,
+                    87
+                ],
+                "hex": "#936b4f",
+                "frequency": 2.8380367240870252,
+                "color_name": "PANTONE 18-1030 Thrush"
+            },
+            {
+                "rgb": [
+                    132,
+                    91,
+                    70
+                ],
+                "hex": "#865e49",
+                "frequency": 2.675084011927327,
+                "color_name": "PANTONE 18-1137 Rawhide"
+            },
+            {
+                "rgb": [
+                    108,
+                    69,
+                    51
+                ],
+                "hex": "#6e493a",
+                "frequency": 2.647587150401071,
+                "color_name": "PANTONE 19-1230 Friar Brown"
+            },
+            {
+                "rgb": [
+                    131,
+                    121,
+                    114
+                ],
+                "hex": "#847a75",
+                "frequency": 2.1634620802502664,
+                "color_name": "PANTONE 18-1210 Driftwood"
+            }
+        ],
+        "crop top": [
+            {
+                "rgb": [
+                    186,
+                    54,
+                    43
+                ],
+                "hex": "#bc322c",
+                "frequency": 27.7235979417923,
+                "color_name": "PANTONE 18-1549 Valiant Poppy"
+            },
+            {
+                "rgb": [
+                    202,
+                    180,
+                    165
+                ],
+                "hex": "#c5b1a0",
+                "frequency": 11.154034262892534,
+                "color_name": "PANTONE 15-1309 Moonlight"
+            },
+            {
+                "rgb": [
+                    207,
+                    191,
+                    180
+                ],
+                "hex": "#cabeb5",
+                "frequency": 10.134171161201477,
+                "color_name": "PANTONE 13-0403 Gray Morn"
+            },
+            {
+                "rgb": [
+                    196,
+                    168,
+                    152
+                ],
+                "hex": "#c2a594",
+                "frequency": 8.047114294536465,
+                "color_name": "PANTONE 15-1315 Rugby Tan"
+            },
+            {
+                "rgb": [
+                    53,
+                    41,
+                    41
+                ],
+                "hex": "#34292a",
+                "frequency": 7.620462172657752,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    189,
+                    156,
+                    138
+                ],
+                "hex": "#b99984",
+                "frequency": 6.455902471787543,
+                "color_name": "PANTONE 16-1317 Brush"
+            },
+            {
+                "rgb": [
+                    175,
+                    143,
+                    126
+                ],
+                "hex": "#b09080",
+                "frequency": 6.339153502356392,
+                "color_name": "PANTONE 16-1221 Roebuck"
+            },
+            {
+                "rgb": [
+                    77,
+                    53,
+                    45
+                ],
+                "hex": "#4a342e",
+                "frequency": 4.044743253690101,
+                "color_name": "PANTONE 19-1419 Chicory Coffee"
+            },
+            {
+                "rgb": [
+                    170,
+                    129,
+                    107
+                ],
+                "hex": "#ab856f",
+                "frequency": 3.7823961486363133,
+                "color_name": "PANTONE 17-1226 Tawny Brown"
+            },
+            {
+                "rgb": [
+                    156,
+                    110,
+                    87
+                ],
+                "hex": "#936b4f",
+                "frequency": 2.8380367240870252,
+                "color_name": "PANTONE 18-1030 Thrush"
+            },
+            {
+                "rgb": [
+                    44,
+                    28,
+                    24
+                ],
+                "hex": "#34292a",
+                "frequency": 2.735036185419,
+                "color_name": "PANTONE 19-1018 Ganache"
+            },
+            {
+                "rgb": [
+                    132,
+                    91,
+                    70
+                ],
+                "hex": "#865e49",
+                "frequency": 2.675084011927327,
+                "color_name": "PANTONE 18-1137 Rawhide"
+            },
+            {
+                "rgb": [
+                    108,
+                    69,
+                    51
+                ],
+                "hex": "#6e493a",
+                "frequency": 2.647587150401071,
+                "color_name": "PANTONE 19-1230 Friar Brown"
+            },
+            {
+                "rgb": [
+                    131,
+                    121,
+                    114
+                ],
+                "hex": "#847a75",
+                "frequency": 2.1634620802502664,
+                "color_name": "PANTONE 18-1210 Driftwood"
+            },
+            {
+                "rgb": [
+                    95,
+                    89,
+                    85
+                ],
+                "hex": "#625d5d",
+                "frequency": 1.6392186383644325,
+                "color_name": "PANTONE 18-0403 Dark Gull Gray"
+            }
+        ]
+    },
+    "detailed_image_analysis": [
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3678671280904441259.jpg",
+            "garment_analysis": {
+                "primary_category": "culottes",
+                "confidence_category": 0.58544921875,
+                "primary_style": "resort wear"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        250,
+                        233,
+                        228
+                    ],
+                    "hex": "#f5e3e2",
+                    "color_name": "PANTONE 11-2409 Delicacy",
+                    "pantone_ref": "PANTONE 11-2409 Delicacy"
+                },
+                {
+                    "rgb": [
+                        176,
+                        106,
+                        82
+                    ],
+                    "hex": "#b37256",
+                    "color_name": "PANTONE 16-1429 Sunburn",
+                    "pantone_ref": "PANTONE 16-1429 Sunburn"
+                },
+                {
+                    "rgb": [
+                        89,
+                        42,
+                        27
+                    ],
+                    "hex": "#66352b",
+                    "color_name": "PANTONE 19-1435 Cherry Mahogany",
+                    "pantone_ref": "PANTONE 19-1435 Cherry Mahogany"
+                },
+                {
+                    "rgb": [
+                        234,
+                        167,
+                        141
+                    ],
+                    "hex": "#edaa86",
+                    "color_name": "PANTONE 14-1224 Coral Sands",
+                    "pantone_ref": "PANTONE 14-1224 Coral Sands"
+                },
+                {
+                    "rgb": [
+                        50,
+                        20,
+                        12
+                    ],
+                    "hex": "#503130",
+                    "color_name": "PANTONE 19-1317 Bitter Chocolate",
+                    "pantone_ref": "PANTONE 19-1317 Bitter Chocolate"
+                },
+                {
+                    "rgb": [
+                        233,
+                        201,
+                        192
+                    ],
+                    "hex": "#edcdc2",
+                    "color_name": "PANTONE 13-1404 Pale Dogwood",
+                    "pantone_ref": "PANTONE 13-1404 Pale Dogwood"
+                },
+                {
+                    "rgb": [
+                        155,
+                        78,
+                        54
+                    ],
+                    "hex": "#a14d3a",
+                    "color_name": "PANTONE 18-1350 Burnt Brick",
+                    "pantone_ref": "PANTONE 18-1350 Burnt Brick"
+                },
+                {
+                    "rgb": [
+                        126,
+                        54,
+                        33
+                    ],
+                    "hex": "#8d3f2d",
+                    "color_name": "PANTONE 19-1250 Picante",
+                    "pantone_ref": "PANTONE 19-1250 Picante"
+                },
+                {
+                    "rgb": [
+                        200,
+                        125,
+                        101
+                    ],
+                    "hex": "#d27f63",
+                    "color_name": "PANTONE 16-1345 Sun Baked",
+                    "pantone_ref": "PANTONE 16-1345 Sun Baked"
+                },
+                {
+                    "rgb": [
+                        212,
+                        169,
+                        157
+                    ],
+                    "hex": "#dbb0a2",
+                    "color_name": "PANTONE 14-1313 Rose Cloud",
+                    "pantone_ref": "PANTONE 14-1313 Rose Cloud"
+                },
+                {
+                    "rgb": [
+                        247,
+                        226,
+                        220
+                    ],
+                    "hex": "#f3dfd7",
+                    "color_name": "PANTONE 11-1305 Angel Wing",
+                    "pantone_ref": "PANTONE 11-1305 Angel Wing"
+                },
+                {
+                    "rgb": [
+                        207,
+                        146,
+                        124
+                    ],
+                    "hex": "#d29380",
+                    "color_name": "PANTONE 16-1330 Muted Clay",
+                    "pantone_ref": "PANTONE 16-1330 Muted Clay"
+                },
+                {
+                    "rgb": [
+                        225,
+                        185,
+                        172
+                    ],
+                    "hex": "#ddb6ab",
+                    "color_name": "PANTONE 14-1311 Evening Sand",
+                    "pantone_ref": "PANTONE 14-1311 Evening Sand"
+                },
+                {
+                    "rgb": [
+                        241,
+                        216,
+                        209
+                    ],
+                    "hex": "#f2d8cd",
+                    "color_name": "PANTONE 12-1209 Soft Pink",
+                    "pantone_ref": "PANTONE 12-1209 Soft Pink"
+                },
+                {
+                    "rgb": [
+                        116,
+                        84,
+                        70
+                    ],
+                    "hex": "#7a5747",
+                    "color_name": "PANTONE 18-1130 Aztec",
+                    "pantone_ref": "PANTONE 18-1130 Aztec"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3678618956458585138.jpg",
+            "garment_analysis": {
+                "primary_category": "sunglasses",
+                "confidence_category": 0.416748046875,
+                "primary_style": "resort wear"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        158,
+                        91,
+                        65
+                    ],
+                    "hex": "#985c41",
+                    "color_name": "PANTONE 18-1239 Sierra",
+                    "pantone_ref": "PANTONE 18-1239 Sierra"
+                },
+                {
+                    "rgb": [
+                        242,
+                        218,
+                        209
+                    ],
+                    "hex": "#f2d8cd",
+                    "color_name": "PANTONE 12-1209 Soft Pink",
+                    "pantone_ref": "PANTONE 12-1209 Soft Pink"
+                },
+                {
+                    "rgb": [
+                        81,
+                        59,
+                        59
+                    ],
+                    "hex": "#503938",
+                    "color_name": "PANTONE 19-1518 Puce",
+                    "pantone_ref": "PANTONE 19-1518 Puce"
+                },
+                {
+                    "rgb": [
+                        219,
+                        147,
+                        110
+                    ],
+                    "hex": "#de8e65",
+                    "color_name": "PANTONE 16-1338 Copper Tan",
+                    "pantone_ref": "PANTONE 16-1338 Copper Tan"
+                },
+                {
+                    "rgb": [
+                        221,
+                        189,
+                        178
+                    ],
+                    "hex": "#e2bdb3",
+                    "color_name": "PANTONE 13-1208 Peachy Keen",
+                    "pantone_ref": "PANTONE 13-1208 Peachy Keen"
+                },
+                {
+                    "rgb": [
+                        183,
+                        137,
+                        121
+                    ],
+                    "hex": "#ae8774",
+                    "color_name": "PANTONE 17-1227 Cafe Au Lait",
+                    "pantone_ref": "PANTONE 17-1227 Cafe Au Lait"
+                },
+                {
+                    "rgb": [
+                        120,
+                        59,
+                        40
+                    ],
+                    "hex": "#73362a",
+                    "color_name": "PANTONE 18-1541 Brandy Brown",
+                    "pantone_ref": "PANTONE 18-1541 Brandy Brown"
+                },
+                {
+                    "rgb": [
+                        249,
+                        230,
+                        221
+                    ],
+                    "hex": "#f6e5db",
+                    "color_name": "PANTONE 12-1106 Sheer Pink",
+                    "pantone_ref": "PANTONE 12-1106 Sheer Pink"
+                },
+                {
+                    "rgb": [
+                        114,
+                        91,
+                        93
+                    ],
+                    "hex": "#6c5656",
+                    "color_name": "PANTONE 18-1409 Peppercorn",
+                    "pantone_ref": "PANTONE 18-1409 Peppercorn"
+                },
+                {
+                    "rgb": [
+                        72,
+                        39,
+                        28
+                    ],
+                    "hex": "#56352d",
+                    "color_name": "PANTONE 19-1432 Chocolate Fondant",
+                    "pantone_ref": "PANTONE 19-1432 Chocolate Fondant"
+                },
+                {
+                    "rgb": [
+                        234,
+                        205,
+                        195
+                    ],
+                    "hex": "#edcdc2",
+                    "color_name": "PANTONE 13-1404 Pale Dogwood",
+                    "pantone_ref": "PANTONE 13-1404 Pale Dogwood"
+                },
+                {
+                    "rgb": [
+                        202,
+                        164,
+                        150
+                    ],
+                    "hex": "#c5a193",
+                    "color_name": "PANTONE 15-1511 Mahogany Rose",
+                    "pantone_ref": "PANTONE 15-1511 Mahogany Rose"
+                },
+                {
+                    "rgb": [
+                        38,
+                        17,
+                        14
+                    ],
+                    "hex": "#34292a",
+                    "color_name": "PANTONE 19-1018 Ganache",
+                    "pantone_ref": "PANTONE 19-1018 Ganache"
+                },
+                {
+                    "rgb": [
+                        236,
+                        170,
+                        136
+                    ],
+                    "hex": "#edaa86",
+                    "color_name": "PANTONE 14-1224 Coral Sands",
+                    "pantone_ref": "PANTONE 14-1224 Coral Sands"
+                },
+                {
+                    "rgb": [
+                        174,
+                        118,
+                        94
+                    ],
+                    "hex": "#a36e51",
+                    "color_name": "PANTONE 17-1430 Pecan Brown",
+                    "pantone_ref": "PANTONE 17-1430 Pecan Brown"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3678574317059900635.jpg",
+            "garment_analysis": {
+                "primary_category": "romper",
+                "confidence_category": 0.396484375,
+                "primary_style": "resort wear"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        246,
+                        234,
+                        231
+                    ],
+                    "hex": "#f2e2e0",
+                    "color_name": "PANTONE 11-2309 Petal Pink",
+                    "pantone_ref": "PANTONE 11-2309 Petal Pink"
+                },
+                {
+                    "rgb": [
+                        94,
+                        80,
+                        76
+                    ],
+                    "hex": "#5b5149",
+                    "color_name": "PANTONE 19-0810 Major Brown",
+                    "pantone_ref": "PANTONE 19-0810 Major Brown"
+                },
+                {
+                    "rgb": [
+                        237,
+                        171,
+                        137
+                    ],
+                    "hex": "#edaa86",
+                    "color_name": "PANTONE 14-1224 Coral Sands",
+                    "pantone_ref": "PANTONE 14-1224 Coral Sands"
+                },
+                {
+                    "rgb": [
+                        41,
+                        19,
+                        15
+                    ],
+                    "hex": "#34292a",
+                    "color_name": "PANTONE 19-1018 Ganache",
+                    "pantone_ref": "PANTONE 19-1018 Ganache"
+                },
+                {
+                    "rgb": [
+                        219,
+                        193,
+                        181
+                    ],
+                    "hex": "#dbbeb7",
+                    "color_name": "PANTONE 14-1309 Peach Whip",
+                    "pantone_ref": "PANTONE 14-1309 Peach Whip"
+                },
+                {
+                    "rgb": [
+                        181,
+                        151,
+                        138
+                    ],
+                    "hex": "#af9483",
+                    "color_name": "PANTONE 16-1318 Warm Taupe",
+                    "pantone_ref": "PANTONE 16-1318 Warm Taupe"
+                },
+                {
+                    "rgb": [
+                        129,
+                        107,
+                        100
+                    ],
+                    "hex": "#7b6660",
+                    "color_name": "PANTONE 18-1312 Deep Taupe",
+                    "pantone_ref": "PANTONE 18-1312 Deep Taupe"
+                },
+                {
+                    "rgb": [
+                        239,
+                        223,
+                        216
+                    ],
+                    "hex": "#f3dfd7",
+                    "color_name": "PANTONE 11-1305 Angel Wing",
+                    "pantone_ref": "PANTONE 11-1305 Angel Wing"
+                },
+                {
+                    "rgb": [
+                        74,
+                        47,
+                        39
+                    ],
+                    "hex": "#4a342e",
+                    "color_name": "PANTONE 19-1419 Chicory Coffee",
+                    "pantone_ref": "PANTONE 19-1419 Chicory Coffee"
+                },
+                {
+                    "rgb": [
+                        136,
+                        71,
+                        46
+                    ],
+                    "hex": "#8c4a2f",
+                    "color_name": "PANTONE 18-1244 Ginger Bread",
+                    "pantone_ref": "PANTONE 18-1244 Ginger Bread"
+                },
+                {
+                    "rgb": [
+                        193,
+                        115,
+                        77
+                    ],
+                    "hex": "#b9714f",
+                    "color_name": "PANTONE 17-1436 Raw Sienna",
+                    "pantone_ref": "PANTONE 17-1436 Raw Sienna"
+                },
+                {
+                    "rgb": [
+                        198,
+                        173,
+                        163
+                    ],
+                    "hex": "#cdb2a5",
+                    "color_name": "PANTONE 14-1307 Rose Dust",
+                    "pantone_ref": "PANTONE 14-1307 Rose Dust"
+                },
+                {
+                    "rgb": [
+                        163,
+                        130,
+                        116
+                    ],
+                    "hex": "#a28776",
+                    "color_name": "PANTONE 16-1414 Chanterelle",
+                    "pantone_ref": "PANTONE 16-1414 Chanterelle"
+                },
+                {
+                    "rgb": [
+                        231,
+                        210,
+                        200
+                    ],
+                    "hex": "#e7cfc7",
+                    "color_name": "PANTONE 12-1206 Silver Peony",
+                    "pantone_ref": "PANTONE 12-1206 Silver Peony"
+                },
+                {
+                    "rgb": [
+                        224,
+                        148,
+                        108
+                    ],
+                    "hex": "#de8e65",
+                    "color_name": "PANTONE 16-1338 Copper Tan",
+                    "pantone_ref": "PANTONE 16-1338 Copper Tan"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3677191492972260963.jpg",
+            "garment_analysis": {
+                "primary_category": "slip dress",
+                "confidence_category": 0.252685546875,
+                "primary_style": "resort wear"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        207,
+                        194,
+                        184
+                    ],
+                    "hex": "#cabeb5",
+                    "color_name": "PANTONE 13-0403 Gray Morn",
+                    "pantone_ref": "PANTONE 13-0403 Gray Morn"
+                },
+                {
+                    "rgb": [
+                        111,
+                        90,
+                        81
+                    ],
+                    "hex": "#685a4e",
+                    "color_name": "PANTONE 19-0809 Chocolate Chip",
+                    "pantone_ref": "PANTONE 19-0809 Chocolate Chip"
+                },
+                {
+                    "rgb": [
+                        235,
+                        222,
+                        211
+                    ],
+                    "hex": "#eeded1",
+                    "color_name": "PANTONE 12-1108 Dew",
+                    "pantone_ref": "PANTONE 12-1108 Dew"
+                },
+                {
+                    "rgb": [
+                        140,
+                        111,
+                        100
+                    ],
+                    "hex": "#8f7265",
+                    "color_name": "PANTONE 18-1321 Brownie",
+                    "pantone_ref": "PANTONE 18-1321 Brownie"
+                },
+                {
+                    "rgb": [
+                        54,
+                        42,
+                        36
+                    ],
+                    "hex": "#392d2b",
+                    "color_name": "PANTONE 19-1106 Mole",
+                    "pantone_ref": "PANTONE 19-1106 Mole"
+                },
+                {
+                    "rgb": [
+                        173,
+                        158,
+                        148
+                    ],
+                    "hex": "#ad9f93",
+                    "color_name": "PANTONE 16-0906 Simply Taupe",
+                    "pantone_ref": "PANTONE 16-0906 Simply Taupe"
+                },
+                {
+                    "rgb": [
+                        226,
+                        213,
+                        202
+                    ],
+                    "hex": "#e0d5c6",
+                    "color_name": "PANTONE 12-0304 Whitecap Gray",
+                    "pantone_ref": "PANTONE 12-0304 Whitecap Gray"
+                },
+                {
+                    "rgb": [
+                        244,
+                        232,
+                        221
+                    ],
+                    "hex": "#f1e8df",
+                    "color_name": "PANTONE 11-0604 Gardenia",
+                    "pantone_ref": "PANTONE 11-0604 Gardenia"
+                },
+                {
+                    "rgb": [
+                        218,
+                        204,
+                        192
+                    ],
+                    "hex": "#dacbbe",
+                    "color_name": "PANTONE 13-1107 Whisper Pink",
+                    "pantone_ref": "PANTONE 13-1107 Whisper Pink"
+                },
+                {
+                    "rgb": [
+                        150,
+                        135,
+                        127
+                    ],
+                    "hex": "#958b84",
+                    "color_name": "PANTONE 17-1210 Moon Rock",
+                    "pantone_ref": "PANTONE 17-1210 Moon Rock"
+                },
+                {
+                    "rgb": [
+                        200,
+                        163,
+                        147
+                    ],
+                    "hex": "#c5a193",
+                    "color_name": "PANTONE 15-1511 Mahogany Rose",
+                    "pantone_ref": "PANTONE 15-1511 Mahogany Rose"
+                },
+                {
+                    "rgb": [
+                        214,
+                        186,
+                        173
+                    ],
+                    "hex": "#d7b8ab",
+                    "color_name": "PANTONE 14-1310 Cameo Rose",
+                    "pantone_ref": "PANTONE 14-1310 Cameo Rose"
+                },
+                {
+                    "rgb": [
+                        193,
+                        178,
+                        168
+                    ],
+                    "hex": "#bbb1a8",
+                    "color_name": "PANTONE 15-4503 Chateau Gray",
+                    "pantone_ref": "PANTONE 15-4503 Chateau Gray"
+                },
+                {
+                    "rgb": [
+                        180,
+                        138,
+                        121
+                    ],
+                    "hex": "#ae8774",
+                    "color_name": "PANTONE 17-1227 Cafe Au Lait",
+                    "pantone_ref": "PANTONE 17-1227 Cafe Au Lait"
+                },
+                {
+                    "rgb": [
+                        83,
+                        65,
+                        58
+                    ],
+                    "hex": "#4f3f3b",
+                    "color_name": "PANTONE 19-1015 Bracken",
+                    "pantone_ref": "PANTONE 19-1015 Bracken"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3676499403267884058.jpg",
+            "garment_analysis": {
+                "primary_category": "slip dress",
+                "confidence_category": 0.5078125,
+                "primary_style": "haute couture"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        177,
+                        141,
+                        116
+                    ],
+                    "hex": "#b38b71",
+                    "color_name": "PANTONE 16-1323 Macaroon",
+                    "pantone_ref": "PANTONE 16-1323 Macaroon"
+                },
+                {
+                    "rgb": [
+                        243,
+                        230,
+                        218
+                    ],
+                    "hex": "#f2e8da",
+                    "color_name": "PANTONE 11-0606 Pristine",
+                    "pantone_ref": "PANTONE 11-0606 Pristine"
+                },
+                {
+                    "rgb": [
+                        107,
+                        62,
+                        42
+                    ],
+                    "hex": "#754734",
+                    "color_name": "PANTONE 19-1241 Tortoise Shell",
+                    "pantone_ref": "PANTONE 19-1241 Tortoise Shell"
+                },
+                {
+                    "rgb": [
+                        220,
+                        201,
+                        181
+                    ],
+                    "hex": "#dacab7",
+                    "color_name": "PANTONE 13-1308 Brazilian Sand",
+                    "pantone_ref": "PANTONE 13-1308 Brazilian Sand"
+                },
+                {
+                    "rgb": [
+                        29,
+                        23,
+                        20
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        154,
+                        112,
+                        87
+                    ],
+                    "hex": "#936b4f",
+                    "color_name": "PANTONE 18-1030 Thrush",
+                    "pantone_ref": "PANTONE 18-1030 Thrush"
+                },
+                {
+                    "rgb": [
+                        201,
+                        172,
+                        147
+                    ],
+                    "hex": "#cfb095",
+                    "color_name": "PANTONE 14-1315 Hazelnut",
+                    "pantone_ref": "PANTONE 14-1315 Hazelnut"
+                },
+                {
+                    "rgb": [
+                        210,
+                        187,
+                        164
+                    ],
+                    "hex": "#d1b7a0",
+                    "color_name": "PANTONE 14-1212 Frappe",
+                    "pantone_ref": "PANTONE 14-1212 Frappe"
+                },
+                {
+                    "rgb": [
+                        166,
+                        126,
+                        101
+                    ],
+                    "hex": "#ae856c",
+                    "color_name": "PANTONE 17-1225 Tawny Birch",
+                    "pantone_ref": "PANTONE 17-1225 Tawny Birch"
+                },
+                {
+                    "rgb": [
+                        126,
+                        80,
+                        57
+                    ],
+                    "hex": "#834f3d",
+                    "color_name": "PANTONE 18-1242 Brown Patina",
+                    "pantone_ref": "PANTONE 18-1242 Brown Patina"
+                },
+                {
+                    "rgb": [
+                        77,
+                        46,
+                        32
+                    ],
+                    "hex": "#56352d",
+                    "color_name": "PANTONE 19-1432 Chocolate Fondant",
+                    "pantone_ref": "PANTONE 19-1432 Chocolate Fondant"
+                },
+                {
+                    "rgb": [
+                        141,
+                        97,
+                        73
+                    ],
+                    "hex": "#865e49",
+                    "color_name": "PANTONE 18-1137 Rawhide",
+                    "pantone_ref": "PANTONE 18-1137 Rawhide"
+                },
+                {
+                    "rgb": [
+                        231,
+                        214,
+                        198
+                    ],
+                    "hex": "#e9d4c3",
+                    "color_name": "PANTONE 12-1006 Mother Of Pearl",
+                    "pantone_ref": "PANTONE 12-1006 Mother Of Pearl"
+                },
+                {
+                    "rgb": [
+                        189,
+                        156,
+                        130
+                    ],
+                    "hex": "#b99984",
+                    "color_name": "PANTONE 16-1317 Brush",
+                    "pantone_ref": "PANTONE 16-1317 Brush"
+                },
+                {
+                    "rgb": [
+                        89,
+                        78,
+                        71
+                    ],
+                    "hex": "#5b5149",
+                    "color_name": "PANTONE 19-0810 Major Brown",
+                    "pantone_ref": "PANTONE 19-0810 Major Brown"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3675726888698205766.jpg",
+            "garment_analysis": {
+                "primary_category": "turtleneck",
+                "confidence_category": 0.3544921875,
+                "primary_style": "minimalist"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        220,
+                        220,
+                        224
+                    ],
+                    "hex": "#d5d5d8",
+                    "color_name": "PANTONE 13-4108 Nimbus Cloud",
+                    "pantone_ref": "PANTONE 13-4108 Nimbus Cloud"
+                },
+                {
+                    "rgb": [
+                        82,
+                        75,
+                        57
+                    ],
+                    "hex": "#535040",
+                    "color_name": "PANTONE 19-0515 Olive Night",
+                    "pantone_ref": "PANTONE 19-0515 Olive Night"
+                },
+                {
+                    "rgb": [
+                        171,
+                        144,
+                        130
+                    ],
+                    "hex": "#a58d7f",
+                    "color_name": "PANTONE 16-1412 Stucco",
+                    "pantone_ref": "PANTONE 16-1412 Stucco"
+                },
+                {
+                    "rgb": [
+                        41,
+                        41,
+                        37
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        202,
+                        182,
+                        174
+                    ],
+                    "hex": "#d4bab6",
+                    "color_name": "PANTONE 14-1803 Sepia Rose",
+                    "pantone_ref": "PANTONE 14-1803 Sepia Rose"
+                },
+                {
+                    "rgb": [
+                        127,
+                        124,
+                        119
+                    ],
+                    "hex": "#827e7c",
+                    "color_name": "PANTONE 17-1500 Steeple Gray",
+                    "pantone_ref": "PANTONE 17-1500 Steeple Gray"
+                },
+                {
+                    "rgb": [
+                        218,
+                        202,
+                        193
+                    ],
+                    "hex": "#dfcdc6",
+                    "color_name": "PANTONE 12-2901 Morganite",
+                    "pantone_ref": "PANTONE 12-2901 Morganite"
+                },
+                {
+                    "rgb": [
+                        24,
+                        24,
+                        28
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        158,
+                        125,
+                        106
+                    ],
+                    "hex": "#997867",
+                    "color_name": "PANTONE 17-1417 Beaver Fur",
+                    "pantone_ref": "PANTONE 17-1417 Beaver Fur"
+                },
+                {
+                    "rgb": [
+                        61,
+                        58,
+                        45
+                    ],
+                    "hex": "#36362d",
+                    "color_name": "PANTONE 19-0509 Rosin",
+                    "pantone_ref": "PANTONE 19-0509 Rosin"
+                },
+                {
+                    "rgb": [
+                        234,
+                        234,
+                        235
+                    ],
+                    "hex": "#e7e9e7",
+                    "color_name": "PANTONE 11-4800 Blanc De Blanc",
+                    "pantone_ref": "PANTONE 11-4800 Blanc De Blanc"
+                },
+                {
+                    "rgb": [
+                        187,
+                        164,
+                        153
+                    ],
+                    "hex": "#bba5a0",
+                    "color_name": "PANTONE 16-1509 Shadow Gray",
+                    "pantone_ref": "PANTONE 16-1509 Shadow Gray"
+                },
+                {
+                    "rgb": [
+                        103,
+                        93,
+                        74
+                    ],
+                    "hex": "#695e4b",
+                    "color_name": "PANTONE 18-0820 Capers",
+                    "pantone_ref": "PANTONE 18-0820 Capers"
+                },
+                {
+                    "rgb": [
+                        200,
+                        202,
+                        210
+                    ],
+                    "hex": "#d0d0da",
+                    "color_name": "PANTONE 13-4105 Lilac Hint",
+                    "pantone_ref": "PANTONE 13-4105 Lilac Hint"
+                },
+                {
+                    "rgb": [
+                        128,
+                        109,
+                        89
+                    ],
+                    "hex": "#816d5e",
+                    "color_name": "PANTONE 18-1017 Caribou",
+                    "pantone_ref": "PANTONE 18-1017 Caribou"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3674971915778778066.jpg",
+            "garment_analysis": {
+                "primary_category": "skirt",
+                "confidence_category": 0.456298828125,
+                "primary_style": "bohemian"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        77,
+                        53,
+                        45
+                    ],
+                    "hex": "#4a342e",
+                    "color_name": "PANTONE 19-1419 Chicory Coffee",
+                    "pantone_ref": "PANTONE 19-1419 Chicory Coffee"
+                },
+                {
+                    "rgb": [
+                        189,
+                        156,
+                        138
+                    ],
+                    "hex": "#b99984",
+                    "color_name": "PANTONE 16-1317 Brush",
+                    "pantone_ref": "PANTONE 16-1317 Brush"
+                },
+                {
+                    "rgb": [
+                        186,
+                        54,
+                        43
+                    ],
+                    "hex": "#bc322c",
+                    "color_name": "PANTONE 18-1549 Valiant Poppy",
+                    "pantone_ref": "PANTONE 18-1549 Valiant Poppy"
+                },
+                {
+                    "rgb": [
+                        202,
+                        180,
+                        165
+                    ],
+                    "hex": "#c5b1a0",
+                    "color_name": "PANTONE 15-1309 Moonlight",
+                    "pantone_ref": "PANTONE 15-1309 Moonlight"
+                },
+                {
+                    "rgb": [
+                        132,
+                        91,
+                        70
+                    ],
+                    "hex": "#865e49",
+                    "color_name": "PANTONE 18-1137 Rawhide",
+                    "pantone_ref": "PANTONE 18-1137 Rawhide"
+                },
+                {
+                    "rgb": [
+                        95,
+                        89,
+                        85
+                    ],
+                    "hex": "#625d5d",
+                    "color_name": "PANTONE 18-0403 Dark Gull Gray",
+                    "pantone_ref": "PANTONE 18-0403 Dark Gull Gray"
+                },
+                {
+                    "rgb": [
+                        170,
+                        129,
+                        107
+                    ],
+                    "hex": "#ab856f",
+                    "color_name": "PANTONE 17-1226 Tawny Brown",
+                    "pantone_ref": "PANTONE 17-1226 Tawny Brown"
+                },
+                {
+                    "rgb": [
+                        53,
+                        41,
+                        41
+                    ],
+                    "hex": "#34292a",
+                    "color_name": "PANTONE 19-1018 Ganache",
+                    "pantone_ref": "PANTONE 19-1018 Ganache"
+                },
+                {
+                    "rgb": [
+                        156,
+                        110,
+                        87
+                    ],
+                    "hex": "#936b4f",
+                    "color_name": "PANTONE 18-1030 Thrush",
+                    "pantone_ref": "PANTONE 18-1030 Thrush"
+                },
+                {
+                    "rgb": [
+                        196,
+                        168,
+                        152
+                    ],
+                    "hex": "#c2a594",
+                    "color_name": "PANTONE 15-1315 Rugby Tan",
+                    "pantone_ref": "PANTONE 15-1315 Rugby Tan"
+                },
+                {
+                    "rgb": [
+                        207,
+                        191,
+                        180
+                    ],
+                    "hex": "#cabeb5",
+                    "color_name": "PANTONE 13-0403 Gray Morn",
+                    "pantone_ref": "PANTONE 13-0403 Gray Morn"
+                },
+                {
+                    "rgb": [
+                        108,
+                        69,
+                        51
+                    ],
+                    "hex": "#6e493a",
+                    "color_name": "PANTONE 19-1230 Friar Brown",
+                    "pantone_ref": "PANTONE 19-1230 Friar Brown"
+                },
+                {
+                    "rgb": [
+                        44,
+                        28,
+                        24
+                    ],
+                    "hex": "#34292a",
+                    "color_name": "PANTONE 19-1018 Ganache",
+                    "pantone_ref": "PANTONE 19-1018 Ganache"
+                },
+                {
+                    "rgb": [
+                        175,
+                        143,
+                        126
+                    ],
+                    "hex": "#b09080",
+                    "color_name": "PANTONE 16-1221 Roebuck",
+                    "pantone_ref": "PANTONE 16-1221 Roebuck"
+                },
+                {
+                    "rgb": [
+                        131,
+                        121,
+                        114
+                    ],
+                    "hex": "#847a75",
+                    "color_name": "PANTONE 18-1210 Driftwood",
+                    "pantone_ref": "PANTONE 18-1210 Driftwood"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3674307610438309896.jpg",
+            "garment_analysis": {
+                "primary_category": "culottes",
+                "confidence_category": 0.7880859375,
+                "primary_style": "resort wear"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        13,
+                        12,
+                        10
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        143,
+                        91,
+                        59
+                    ],
+                    "hex": "#8b593e",
+                    "color_name": "PANTONE 17-1142 Argan Oil",
+                    "pantone_ref": "PANTONE 17-1142 Argan Oil"
+                },
+                {
+                    "rgb": [
+                        33,
+                        28,
+                        24
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        211,
+                        150,
+                        104
+                    ],
+                    "hex": "#dd9c6b",
+                    "color_name": "PANTONE 15-1234 Gold Earth",
+                    "pantone_ref": "PANTONE 15-1234 Gold Earth"
+                },
+                {
+                    "rgb": [
+                        112,
+                        71,
+                        42
+                    ],
+                    "hex": "#704822",
+                    "color_name": "PANTONE 18-1048 Monks Robe",
+                    "pantone_ref": "PANTONE 18-1048 Monks Robe"
+                },
+                {
+                    "rgb": [
+                        3,
+                        6,
+                        5
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        57,
+                        49,
+                        43
+                    ],
+                    "hex": "#3f352f",
+                    "color_name": "PANTONE 19-0840 Delicioso",
+                    "pantone_ref": "PANTONE 19-0840 Delicioso"
+                },
+                {
+                    "rgb": [
+                        23,
+                        21,
+                        17
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        176,
+                        117,
+                        79
+                    ],
+                    "hex": "#ae7250",
+                    "color_name": "PANTONE 17-1143 Hazel",
+                    "pantone_ref": "PANTONE 17-1143 Hazel"
+                },
+                {
+                    "rgb": [
+                        117,
+                        110,
+                        102
+                    ],
+                    "hex": "#776a5f",
+                    "color_name": "PANTONE 18-1112 Walnut",
+                    "pantone_ref": "PANTONE 18-1112 Walnut"
+                },
+                {
+                    "rgb": [
+                        157,
+                        149,
+                        142
+                    ],
+                    "hex": "#9a9186",
+                    "color_name": "PANTONE 16-0205 Vintage Khaki",
+                    "pantone_ref": "PANTONE 16-0205 Vintage Khaki"
+                },
+                {
+                    "rgb": [
+                        43,
+                        37,
+                        31
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        235,
+                        184,
+                        138
+                    ],
+                    "hex": "#f1bd89",
+                    "color_name": "PANTONE 13-1027 Apricot Cream",
+                    "pantone_ref": "PANTONE 13-1027 Apricot Cream"
+                },
+                {
+                    "rgb": [
+                        85,
+                        77,
+                        69
+                    ],
+                    "hex": "#5b5149",
+                    "color_name": "PANTONE 19-0810 Major Brown",
+                    "pantone_ref": "PANTONE 19-0810 Major Brown"
+                },
+                {
+                    "rgb": [
+                        82,
+                        48,
+                        27
+                    ],
+                    "hex": "#54392d",
+                    "color_name": "PANTONE 19-1218 Potting Soil",
+                    "pantone_ref": "PANTONE 19-1218 Potting Soil"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3673628029220902379.jpg",
+            "garment_analysis": {
+                "primary_category": "slip dress",
+                "confidence_category": 0.86669921875,
+                "primary_style": "bohemian"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        54,
+                        39,
+                        34
+                    ],
+                    "hex": "#392d2b",
+                    "color_name": "PANTONE 19-1106 Mole",
+                    "pantone_ref": "PANTONE 19-1106 Mole"
+                },
+                {
+                    "rgb": [
+                        170,
+                        120,
+                        98
+                    ],
+                    "hex": "#a47864",
+                    "color_name": "PANTONE 17-1230 Mocha Mousse",
+                    "pantone_ref": "PANTONE 17-1230 Mocha Mousse"
+                },
+                {
+                    "rgb": [
+                        108,
+                        72,
+                        60
+                    ],
+                    "hex": "#6e493a",
+                    "color_name": "PANTONE 19-1230 Friar Brown",
+                    "pantone_ref": "PANTONE 19-1230 Friar Brown"
+                },
+                {
+                    "rgb": [
+                        181,
+                        133,
+                        110
+                    ],
+                    "hex": "#ba8671",
+                    "color_name": "PANTONE 16-1422 Cork",
+                    "pantone_ref": "PANTONE 16-1422 Cork"
+                },
+                {
+                    "rgb": [
+                        27,
+                        27,
+                        26
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        140,
+                        95,
+                        76
+                    ],
+                    "hex": "#8f5f50",
+                    "color_name": "PANTONE 18-1235 Russet",
+                    "pantone_ref": "PANTONE 18-1235 Russet"
+                },
+                {
+                    "rgb": [
+                        82,
+                        55,
+                        46
+                    ],
+                    "hex": "#54392d",
+                    "color_name": "PANTONE 19-1218 Potting Soil",
+                    "pantone_ref": "PANTONE 19-1218 Potting Soil"
+                },
+                {
+                    "rgb": [
+                        208,
+                        187,
+                        175
+                    ],
+                    "hex": "#cebaa8",
+                    "color_name": "PANTONE 14-1209 Smoke Gray",
+                    "pantone_ref": "PANTONE 14-1209 Smoke Gray"
+                },
+                {
+                    "rgb": [
+                        41,
+                        32,
+                        30
+                    ],
+                    "hex": "#2e272a",
+                    "color_name": "PANTONE 19-3909 Black Bean",
+                    "pantone_ref": "PANTONE 19-3909 Black Bean"
+                },
+                {
+                    "rgb": [
+                        124,
+                        83,
+                        67
+                    ],
+                    "hex": "#7a5747",
+                    "color_name": "PANTONE 18-1130 Aztec",
+                    "pantone_ref": "PANTONE 18-1130 Aztec"
+                },
+                {
+                    "rgb": [
+                        14,
+                        11,
+                        9
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        68,
+                        47,
+                        40
+                    ],
+                    "hex": "#4a342e",
+                    "color_name": "PANTONE 19-1419 Chicory Coffee",
+                    "pantone_ref": "PANTONE 19-1419 Chicory Coffee"
+                },
+                {
+                    "rgb": [
+                        95,
+                        63,
+                        53
+                    ],
+                    "hex": "#5c3e35",
+                    "color_name": "PANTONE 19-1214 Chocolate Lab",
+                    "pantone_ref": "PANTONE 19-1214 Chocolate Lab"
+                },
+                {
+                    "rgb": [
+                        156,
+                        107,
+                        87
+                    ],
+                    "hex": "#a47864",
+                    "color_name": "PANTONE 17-1230 Mocha Mousse",
+                    "pantone_ref": "PANTONE 17-1230 Mocha Mousse"
+                },
+                {
+                    "rgb": [
+                        188,
+                        152,
+                        133
+                    ],
+                    "hex": "#be9785",
+                    "color_name": "PANTONE 16-1219 Tuscany",
+                    "pantone_ref": "PANTONE 16-1219 Tuscany"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3672873068703073447.jpg",
+            "garment_analysis": {
+                "primary_category": "wide-leg pants",
+                "confidence_category": 0.437255859375,
+                "primary_style": "haute couture"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        66,
+                        66,
+                        64
+                    ],
+                    "hex": "#413e3d",
+                    "color_name": "PANTONE 19-0000 Raven",
+                    "pantone_ref": "PANTONE 19-0000 Raven"
+                },
+                {
+                    "rgb": [
+                        164,
+                        164,
+                        163
+                    ],
+                    "hex": "#a2a2a1",
+                    "color_name": "PANTONE 14-5002 Silver",
+                    "pantone_ref": "PANTONE 14-5002 Silver"
+                },
+                {
+                    "rgb": [
+                        120,
+                        120,
+                        119
+                    ],
+                    "hex": "#807d7f",
+                    "color_name": "PANTONE 17-4014 Titanium",
+                    "pantone_ref": "PANTONE 17-4014 Titanium"
+                },
+                {
+                    "rgb": [
+                        176,
+                        176,
+                        175
+                    ],
+                    "hex": "#abafae",
+                    "color_name": "PANTONE 15-4703 Mirage Gray",
+                    "pantone_ref": "PANTONE 15-4703 Mirage Gray"
+                },
+                {
+                    "rgb": [
+                        25,
+                        25,
+                        24
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        94,
+                        94,
+                        92
+                    ],
+                    "hex": "#5c5d5b",
+                    "color_name": "PANTONE 18-0306 Gunmetal",
+                    "pantone_ref": "PANTONE 18-0306 Gunmetal"
+                },
+                {
+                    "rgb": [
+                        141,
+                        141,
+                        140
+                    ],
+                    "hex": "#8d8f8f",
+                    "color_name": "PANTONE 17-5102 Griffin",
+                    "pantone_ref": "PANTONE 17-5102 Griffin"
+                },
+                {
+                    "rgb": [
+                        38,
+                        38,
+                        36
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        202,
+                        202,
+                        201
+                    ],
+                    "hex": "#cacccb",
+                    "color_name": "PANTONE 13-4303 Dawn Blue",
+                    "pantone_ref": "PANTONE 13-4303 Dawn Blue"
+                },
+                {
+                    "rgb": [
+                        51,
+                        51,
+                        49
+                    ],
+                    "hex": "#363838",
+                    "color_name": "PANTONE 19-4305 Pirate Black",
+                    "pantone_ref": "PANTONE 19-4305 Pirate Black"
+                },
+                {
+                    "rgb": [
+                        152,
+                        152,
+                        152
+                    ],
+                    "hex": "#989a98",
+                    "color_name": "PANTONE 16-4702 Limestone",
+                    "pantone_ref": "PANTONE 16-4702 Limestone"
+                },
+                {
+                    "rgb": [
+                        108,
+                        107,
+                        106
+                    ],
+                    "hex": "#6c6868",
+                    "color_name": "PANTONE 18-0601 Charcoal Gray",
+                    "pantone_ref": "PANTONE 18-0601 Charcoal Gray"
+                },
+                {
+                    "rgb": [
+                        81,
+                        80,
+                        78
+                    ],
+                    "hex": "#4a4b4d",
+                    "color_name": "PANTONE 19-3906 Dark Shadow",
+                    "pantone_ref": "PANTONE 19-3906 Dark Shadow"
+                },
+                {
+                    "rgb": [
+                        130,
+                        130,
+                        129
+                    ],
+                    "hex": "#848283",
+                    "color_name": "PANTONE 17-0000 Frost Gray",
+                    "pantone_ref": "PANTONE 17-0000 Frost Gray"
+                },
+                {
+                    "rgb": [
+                        187,
+                        187,
+                        187
+                    ],
+                    "hex": "#bbbcbc",
+                    "color_name": "PANTONE 14-4103 Gray Violet",
+                    "pantone_ref": "PANTONE 14-4103 Gray Violet"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3671392751140913498.jpg",
+            "garment_analysis": {
+                "primary_category": "mini dress",
+                "confidence_category": 0.192138671875,
+                "primary_style": "urban"
+            },
+            "colors": [
+                {
+                    "rgb": [
+                        15,
+                        15,
+                        15
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        170,
+                        170,
+                        170
+                    ],
+                    "hex": "#abafae",
+                    "color_name": "PANTONE 15-4703 Mirage Gray",
+                    "pantone_ref": "PANTONE 15-4703 Mirage Gray"
+                },
+                {
+                    "rgb": [
+                        88,
+                        87,
+                        86
+                    ],
+                    "hex": "#5c5d5b",
+                    "color_name": "PANTONE 18-0306 Gunmetal",
+                    "pantone_ref": "PANTONE 18-0306 Gunmetal"
+                },
+                {
+                    "rgb": [
+                        130,
+                        129,
+                        128
+                    ],
+                    "hex": "#848283",
+                    "color_name": "PANTONE 17-0000 Frost Gray",
+                    "pantone_ref": "PANTONE 17-0000 Frost Gray"
+                },
+                {
+                    "rgb": [
+                        37,
+                        37,
+                        36
+                    ],
+                    "hex": "#2b2929",
+                    "color_name": "PANTONE 19-4008 Meteorite",
+                    "pantone_ref": "PANTONE 19-4008 Meteorite"
+                },
+                {
+                    "rgb": [
+                        186,
+                        186,
+                        185
+                    ],
+                    "hex": "#bbbcbc",
+                    "color_name": "PANTONE 14-4103 Gray Violet",
+                    "pantone_ref": "PANTONE 14-4103 Gray Violet"
+                },
+                {
+                    "rgb": [
+                        218,
+                        218,
+                        218
+                    ],
+                    "hex": "#d6dbd9",
+                    "color_name": "PANTONE 12-4705 Blue Blush",
+                    "pantone_ref": "PANTONE 12-4705 Blue Blush"
+                },
+                {
+                    "rgb": [
+                        26,
+                        26,
+                        26
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        52,
+                        52,
+                        51
+                    ],
+                    "hex": "#363838",
+                    "color_name": "PANTONE 19-4305 Pirate Black",
+                    "pantone_ref": "PANTONE 19-4305 Pirate Black"
+                },
+                {
+                    "rgb": [
+                        150,
+                        150,
+                        149
+                    ],
+                    "hex": "#989a98",
+                    "color_name": "PANTONE 16-4702 Limestone",
+                    "pantone_ref": "PANTONE 16-4702 Limestone"
+                },
+                {
+                    "rgb": [
+                        108,
+                        107,
+                        106
+                    ],
+                    "hex": "#6c6868",
+                    "color_name": "PANTONE 18-0601 Charcoal Gray",
+                    "pantone_ref": "PANTONE 18-0601 Charcoal Gray"
+                },
+                {
+                    "rgb": [
+                        200,
+                        200,
+                        200
+                    ],
+                    "hex": "#c5c6c7",
+                    "color_name": "PANTONE 14-4102 Glacier Gray",
+                    "pantone_ref": "PANTONE 14-4102 Glacier Gray"
+                },
+                {
+                    "rgb": [
+                        20,
+                        20,
+                        20
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        9,
+                        9,
+                        9
+                    ],
+                    "hex": "#26262a",
+                    "color_name": "PANTONE 19-3911 Black Beauty",
+                    "pantone_ref": "PANTONE 19-3911 Black Beauty"
+                },
+                {
+                    "rgb": [
+                        70,
+                        69,
+                        68
+                    ],
+                    "hex": "#434447",
+                    "color_name": "PANTONE 19-0201 Asphalt",
+                    "pantone_ref": "PANTONE 19-0201 Asphalt"
+                }
+            ]
+        },
+        {
+            "source": "s3://trendsproject/images/instagram/zara/3670593688162029930.jpg",
+            "garment_analysis": {
+                "primary_category": "cardigan",
+                "confidence_category": 0.323486328125,
+                "primary_style": "urban"
+            },
+            "colors": []
+        }
+    ]
+}
