@@ -32,3 +32,5 @@ output_*.webp
 # Si Dockerfile et docker-compose.yaml sont des fichiers de template que vous modifiez,
 # vous pouvez les inclure. Si ce sont des fichiers générés/temporaires, ignorez-les.
 # Pour l'instant, nous les incluons s'ils sont nécessaires au build Render.
+
+service-account-key.json

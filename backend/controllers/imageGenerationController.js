@@ -28,9 +28,8 @@ exports.generateImageFromTrend = async (req, res) => {
     return res.status(400).json({ message: "Un 'prompt' est requis pour la génération." });
   }
 
-  // Chemins absolus pour garantir que le script est trouvé, peu importe d'où le backend est lancé
-  const pythonExecutable = "python3";
-  const scriptPath = path.join(__dirname, '..', 'generator.py');
+  const pythonExecutable = "python3"; 
+  const scriptPath = path.join(__dirname, '..', 'generator.py'); 
 
   const scriptArgs = [
     scriptPath,
@@ -46,27 +45,40 @@ exports.generateImageFromTrend = async (req, res) => {
 
   let scriptOutput = '';
   let scriptError = '';
+  let responseSent = false; // Flag pour s'assurer qu'une seule réponse est envoyée
 
-  // Écoute en temps réel de la sortie du script Python
   pythonProcess.stdout.on('data', (data) => {
     scriptOutput += data.toString();
     console.log(`[Python stdout]: ${data.toString().trim()}`);
   });
 
-  // Écoute en temps réel des erreurs
   pythonProcess.stderr.on('data', (data) => {
     scriptError += data.toString();
     console.error(`[Python stderr]: ${data.toString().trim()}`);
   });
 
-  // Quand le script Python se termine
-  pythonProcess.on('close', (code) => {
+  // Gestion des erreurs au démarrage du processus (si le binaire python n'est pas trouvé par exemple)
+  pythonProcess.on('error', (err) => {
+    if (!responseSent) { // S'assure de n'envoyer qu'une seule fois
+      responseSent = true;
+      console.error('Échec du démarrage du sous-processus de génération d\'images.', err);
+      return res.status(500).json({ message: 'Impossible de lancer le processus de génération d\'images.', error: err.message });
+    }
+  });
+
+  // Gère la fermeture du processus Python
+  pythonProcess.on('close', async (code) => { // async pour getSignedUrl
+    if (responseSent) return; // Si une réponse a déjà été envoyée par 'error', on s'arrête
+
+    responseSent = true; // Marque la réponse comme envoyée
+
     console.log(`Le script Python s'est terminé avec le code : ${code}`);
 
     if (code !== 0) {
+      const errorDetails = scriptError || scriptOutput || "Aucune sortie d'erreur disponible.";
       return res.status(500).json({
         message: "Le script Python 'generator.py' a rencontré une erreur critique.",
-        error: scriptError
+        error: errorDetails
       });
     }
     
@@ -74,29 +86,25 @@ exports.generateImageFromTrend = async (req, res) => {
     const match = scriptOutput.match(/S3_URI_PATH:(s3:.*)/);
     if (match && match[1]) {
       const s3Uri = match[1].trim();
-      const [bucket, ...keyParts] = s3Uri.replace('s3://', '').split('/');
-      const key = keyParts.join('/');
       
-      // Paramètres pour générer une URL d'accès temporaire (valide 1 heure)
-      const params = { Bucket: bucket, Key: key, Expires: 3600 };
-      
+      let presignedUrl;
       try {
-        const presignedUrl = s3.getSignedUrl('getObject', params);
+        const [bucket, ...keyParts] = s3Uri.replace('s3://', '').split('/');
+        const key = keyParts.join('/');
+        const params = { Bucket: bucket, Key: key, Expires: 3600 }; // Valide 1 heure
+        
+        presignedUrl = s3.getSignedUrl('getObject', params);
         console.log(`Image générée et uploadée. URL pré-signée créée : ${presignedUrl}`);
-        // On renvoie l'URL publique à l'orchestrateur
-        res.status(201).json({ message: 'Image générée avec succès sur S3', imageUrl: presignedUrl, s3Uri: s3Uri });
+        
+        return res.status(201).json({ message: 'Image générée avec succès sur S3', imageUrl: presignedUrl, s3Uri: s3Uri });
+        
       } catch (e) {
-         console.error("Erreur lors de la génération de l'URL pré-signée S3:", e);
-         res.status(500).json({ message: "Erreur lors de la création de l'URL de l'image.", error: e.message });
+         console.error("Erreur lors de la génération de l'URL pré-signée S3 ou du traitement S3:", e);
+         return res.status(500).json({ message: "Erreur lors de la création de l'URL de l'image.", error: e.message });
       }
       
     } else {
-      res.status(500).json({ message: "Le script de génération n'a pas retourné de chemin S3 valide.", details: scriptOutput });
+      return res.status(500).json({ message: "Le script de génération n'a pas retourné de chemin S3 valide.", details: scriptOutput });
     }
-  });
-
-  pythonProcess.on('error', (err) => {
-    console.error('Échec du démarrage du sous-processus.', err);
-    res.status(500).json({ message: 'Impossible de lancer le processus de génération d\'images.'});
   });
 };

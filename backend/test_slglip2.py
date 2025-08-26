@@ -48,8 +48,14 @@ TREND_MAP = {
 
 class FashionTrendColorAnalyzer:
     def __init__(self, image_source):
+        print("--- DÉBUT VÉRIFICATION GPU - VERSION 2 ---")
+        print(f"Version de PyTorch : {torch.__version__}")
+        print(f"CUDA est-il disponible ? : {torch.cuda.is_available()}")
+        if torch.cuda.is_available():
+            print(f"Nombre de GPU détectés : {torch.cuda.device_count()}")
+            print(f"Nom du GPU : {torch.cuda.get_device_name(0)}")
         self.image_source = image_source
-        self.device = "mps" if torch.backends.mps.is_available() else "cpu"
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
         print(f"Utilisation du device : {self.device}")
         self.model, self.preprocess = clip.load("ViT-L/14@336px", device=self.device)
         self.image_paths = self._collect_image_sources()
@@ -549,71 +555,63 @@ class FashionTrendColorAnalyzer:
             traceback.print_exc()
 
 
-def post_results_to_api(json_report_path, api_url):
-    """Poste le fichier JSON du rapport à l'API backend."""
+def update_job_on_api(json_report_path, api_url, job_id):
+    """Met à jour une tâche spécifique via l'API backend avec les résultats."""
     try:
         with open(json_report_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        print(f"--- Envoi du rapport à l'API : {api_url} ---")
-        response = requests.post(api_url, json=data)
+        # L'URL inclut maintenant l'ID de la tâche
+        full_api_url = f"{api_url}/{job_id}"
+        print(f"--- Mise à jour de la tâche sur l'API : {full_api_url} ---")
+        
+        # On utilise une requête PUT
+        response = requests.put(full_api_url, json=data)
         response.raise_for_status()
-        print(f"--- Rapport posté avec succès à l'API. Réponse : {response.status_code} ---")
+        print(f"--- Tâche mise à jour avec succès. Réponse : {response.status_code} ---")
         return response.json()
-    except FileNotFoundError:
-        print(f"ERREUR API: Fichier rapport non trouvé à {json_report_path}")
-    except requests.exceptions.RequestException as e:
-        print(f"ERREUR API: Échec de l'envoi du rapport à l'API : {e}")
+    except Exception as e:
+        # Si ça échoue, on pourrait avoir une logique pour mettre à jour la tâche en "failed"
+        print(f"ERREUR API: Échec de la mise à jour de la tâche : {e}", file=sys.stderr)
+        # On pourrait aussi appeler l'API avec un statut d'erreur
     return None
 
 
 # NOUVELLE VERSION CORRIGÉE de main()
 
+# Dans test_slglip2.py
+
 def main():
-    """
-    Fonction principale pour exécuter l'analyse depuis la ligne de commande.
-    """
     parser = argparse.ArgumentParser(description="Analyseur de tendances de mode.")
     parser.add_argument("source", help="Chemin S3 ou JSON local à analyser.")
+    parser.add_argument("--job_id", required=True, help="ID de la tâche en cours.")
     parser.add_argument("--threshold", type=float, default=0.10, help="Seuil de confiance.")
-    # CORRECTION : Utilisation cohérente du nom d'argument
-    parser.add_argument("--api_endpoint", default="http://backend:3000/api/trends", help="Endpoint API.")
     args = parser.parse_args()
 
-    image_source = args.source
-    threshold = args.threshold
-    # CORRECTION : Utilisation du bon nom d'attribut
-    api_url = args.api_endpoint
-
-    print(f"Lancement de l'analyse pour la source : {image_source}")
-
-    # CORRECTION : On ne vérifie l'existence que si ce n'est pas un chemin S3
-    if not image_source.startswith('s3://') and not os.path.exists(image_source):
-        print(f"ERREUR : Le chemin local '{image_source}' est introuvable.")
-        return
-
     try:
-        analyzer = FashionTrendColorAnalyzer(image_source)
-        fashion_trends_raw, all_detected_garments_with_scores = analyzer.analyze_fashion_trends(confidence_threshold=threshold)
+        analyzer = FashionTrendColorAnalyzer(args.source)
+        fashion_trends_raw, all_detected_garments_with_scores = analyzer.analyze_fashion_trends(confidence_threshold=args.threshold)
         
         if fashion_trends_raw:
-            print("\n--- Lancement de la Transformation et des Exports Locaux ---")
+            print("\n--- Lancement de la Transformation ---", file=sys.stderr)
             fashion_trends_for_db = analyzer._transform_results_for_db(fashion_trends_raw)
-            json_output_path = 'fashion_trends_report.json'
+            # On utilise un nom de fichier unique basé sur le job_id dans /tmp
+            json_output_path = f'/tmp/report_{args.job_id}.json'
             analyzer.export_to_json(fashion_trends_for_db, json_output_path)
-            # Les exports PDF et graphiques sont optionnels, vous pouvez les commenter si non désirés
-            weighted_garment_counts = Counter(g for g, s in all_detected_garments_with_scores)
-            analyzer.export_pantone_style_report(fashion_trends_raw, weighted_garment_counts, 'fashion_trend_report.pdf')
-            analyzer.visualize_fashion_trends(fashion_trends_raw, weighted_garment_counts)
-            if api_url:
-                post_results_to_api(json_output_path, api_url)
-            print("\n--- Analyse et exportation terminées avec succès ! ---")
+            
+            # On imprime le chemin du rapport pour que Node.js le récupère
+            print(f"REPORT_FILE_PATH:{json_output_path}")
+            
+            print("\n--- Analyse et exportation terminées avec succès ! ---", file=sys.stderr)
         else:
-            print("\n--- Aucune donnée n'a pu être analysée. Aucun rapport n'a été généré. ---")
+            print("\n--- Aucune donnée n'a pu être analysée. ---", file=sys.stderr)
+            # Quitter avec une erreur si l'analyse échoue à produire des résultats
+            sys.exit(1)
 
     except Exception as e:
-        print(f"Une erreur inattendue est survenue : {e}")
-        traceback.print_exc()
+        print(f"Une erreur inattendue est survenue : {e}", file=sys.stderr)
+        traceback.print_exc(file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()

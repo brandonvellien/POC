@@ -4,6 +4,10 @@ import json
 import boto3
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
+import sys 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+backend_path = os.path.join(current_dir, 'backend')
+sys.path.append(backend_path)
 # CORRECTION : On importe bien les deux fonctions séparées de l'orchestrateur
 from orchestrator import run_web_analysis_flow, run_instagram_analysis_flow, run_text_enrichment_flow, run_image_generation_flow
 

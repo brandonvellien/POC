@@ -1,28 +1,59 @@
-# Dockerfile pour le service frontend - VERSION FINALE CORRIGÉE
+# Dockerfile FINAL (v3) - Approche simplifiée et robuste
 
-# Étape 1: Image de base Python.
-FROM python:3.12-slim
+# Étape 1 : Base NVIDIA (inchangée)
+FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04
 
-# Étape 2: Installation de git, nécessaire pour CLIP.
-RUN apt-get update && apt-get install -y git
+# Étape 2 : Dépendances système + Python + Node.js (regroupés)
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    git \
+    gnupg \
+    wget \
+    unzip \
+    jq \
+    ca-certificates \
+    python3.11 \
+    python3.11-dev \
+    python3-pip \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
-# Étape 3: Définition du dossier de travail.
+# Étape 3 : Configurer Python 3.11 par défaut (inchangée)
+RUN ln -sf /usr/bin/python3.11 /usr/bin/python && \
+    ln -sf /usr/bin/python3.11 /usr/bin/python3 && \
+    curl https://bootstrap.pypa.io/get-pip.py | python
+
+# === CORRECTION v3 : Installation de Chrome et du dernier ChromeDriver stable ===
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/google-chrome-keyring.gpg \
+    && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable \
+    && DRIVER_URL=$(wget -qO- https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | jq -r '.channels.Stable.downloads.chromedriver[] | select(.platform=="linux64") | .url') \
+    && wget -qP /tmp/ "$DRIVER_URL" \
+    && unzip /tmp/chromedriver-linux64.zip -d /usr/local/bin/ \
+    && rm -f /tmp/chromedriver-linux64.zip \
+    && rm -rf /var/lib/apt/lists/*
+# === FIN DE LA CORRECTION v3 ===
+
+# Étape 4 : Définir le répertoire de travail
 WORKDIR /app
 
-# Étape 4: Copie de la liste des dépendances.
-COPY requirements.txt .
+# Étape 5 : Installer les dépendances Node.js
+COPY backend/package.json backend/package-lock.json ./backend/
+RUN npm install --prefix ./backend --omit=dev
 
-# Étape 5: Installation des dépendances.
-# On utilise --break-system-packages ici car c'est un conteneur dédié à Python.
-# C'est une alternative reconnue à venv pour simplifier les Dockerfiles d'application.
-RUN pip install --no-cache-dir --break-system-packages -r requirements.txt && \
-    pip install git+https://github.com/openai/CLIP.git
+# Étape 6 : Installer les dépendances Python
+COPY backend/requirements.txt ./backend/
+RUN pip install --no-cache-dir -r ./backend/requirements.txt
 
-# Étape 6: Copie du reste du code.
-COPY . .
+# Étape 7 : Copier le reste de l'application
+COPY backend/ ./backend/
 
-# Étape 7: Exposition du port.
-EXPOSE 8501
+# Exposer le port
+EXPOSE 8080
 
-# Étape 8: Commande de démarrage.
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Commande de démarrage
+CMD ["node", "./backend/index.js"]

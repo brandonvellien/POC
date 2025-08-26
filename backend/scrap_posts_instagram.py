@@ -1,9 +1,8 @@
-# scrap_posts_instagram.py - Version complète et finale
-
+# scrap_posts_instagram.py - Version robuste
 import http.client
 import json
 import os
-import sys
+import sys # Importé pour sys.exit et sys.stderr
 import requests
 from io import BytesIO
 import boto3
@@ -14,13 +13,14 @@ load_dotenv()
 
 API_HOST = "instagram-scraper-api2.p.rapidapi.com"
 API_KEY = os.environ.get("INSTAGRAM_API_KEY")
-S3_BUCKET_NAME = 'trendsproject' # Assurez-vous que c'est le bon nom
+S3_BUCKET_NAME = 'trendsproject'
 
 if not API_KEY:
-    print("❌ Erreur: INSTAGRAM_API_KEY n'est pas définie dans .env")
-    exit(1)
+    print("❌ Erreur: INSTAGRAM_API_KEY n'est pas définie dans .env", file=sys.stderr)
+    sys.exit(1)
 
 def upload_fileobj_to_s3(fileobj, bucket, object_name):
+    """Téléverse un objet fichier vers S3 et arrête le script en cas d'erreur."""
     s3_client = boto3.client('s3')
     try:
         s3_client.upload_fileobj(fileobj, bucket, object_name)
@@ -28,8 +28,9 @@ def upload_fileobj_to_s3(fileobj, bucket, object_name):
         print(f"✅ Image téléversée vers : {s3_uri}")
         return s3_uri
     except ClientError as e:
-        print(f"❌ Erreur S3 lors du téléversement de {object_name}: {e}")
-        return None
+        # MODIFICATION CRUCIALE : Arrête le script en cas d'erreur S3
+        print(f"❌ Erreur S3 lors du téléversement de {object_name}: {e}", file=sys.stderr)
+        sys.exit(1)
 
 def get_posts_by_user(username):
     conn = http.client.HTTPSConnection(API_HOST)
@@ -41,7 +42,7 @@ def get_posts_by_user(username):
         data = res.read()
         return json.loads(data.decode("utf-8"))
     except Exception as e:
-        print(f"Erreur de connexion ou de décodage JSON pour {username}: {e}")
+        print(f"Erreur de connexion ou de décodage JSON pour {username}: {e}", file=sys.stderr)
         return {}
 
 def get_image_url(post):
@@ -54,7 +55,7 @@ def get_image_url(post):
                     if 'image_versions' in media and 'items' in media['image_versions']:
                         return media['image_versions']['items'][0]['url']
     except Exception as e:
-        print(f"Erreur lors de l'extraction de l'URL d'image: {e}")
+        print(f"Erreur lors de l'extraction de l'URL d'image: {e}", file=sys.stderr)
     return ''
 
 def extract_post_id(post):
@@ -64,8 +65,8 @@ def main():
     if len(sys.argv) > 1:
         usernames = [name.strip() for name in sys.argv[1].split(',')]
     else:
-        print("❌ Erreur: Veuillez fournir au moins un nom d'utilisateur.")
-        return
+        print("❌ Erreur: Veuillez fournir au moins un nom d'utilisateur.", file=sys.stderr)
+        sys.exit(1)
 
     all_posts = []
     for username in usernames:
@@ -96,19 +97,22 @@ def main():
                                     'media_type': post.get('media_type', '')}
                                 all_posts.append(post_data)
                             except Exception as e:
-                                print(f"⚠️ Erreur lors du traitement d'un post: {e}")
+                                print(f"⚠️ Erreur lors du traitement d'un post: {e}", file=sys.stderr)
         else:
-            print(f"🚨 Échec de la récupération des données pour {username}.")
+            print(f"🚨 Échec de la récupération des données pour {username}.", file=sys.stderr)
 
     if not all_posts:
-        print("\n❌ Aucun post traité. Fichier JSON non créé.")
-        return
+        print("\n❌ Aucun post traité. Fichier JSON non créé.", file=sys.stderr)
+        sys.exit(1)
 
-    json_filename = f'instagram_posts_{"_".join(usernames)}.json'
+    # MODIFICATION : Enregistre le fichier dans le répertoire /tmp du conteneur
+    json_filename = f'/tmp/instagram_posts_{"_".join(usernames)}.json'
+    
     with open(json_filename, 'w', encoding='utf-8') as f:
         json.dump(all_posts, f, indent=2, ensure_ascii=False)
     
     print(f"\n📂 Données enregistrées dans {json_filename} ✅")
+    # Affiche le chemin absolu pour que Node.js le récupère
     print(f"JSON_FILE_PATH:{json_filename}")
 
 if __name__ == "__main__":

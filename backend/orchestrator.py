@@ -1,9 +1,8 @@
-# orchestrator.py - VERSION FINALE, COMPLÈTE ET CORRIGÉE
+# orchestrator.py - VERSION MISE À JOUR AVEC TÂCHES ASYNCHRONES
 
-import subprocess
 import os
 import json
-import re
+import time # Ajout de l'import pour le polling
 import requests
 from openai import OpenAI
 from tavily import TavilyClient
@@ -16,71 +15,76 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY")
 
 # ==============================================================================
-# SECTION 1 : FONCTION UTILITAIRE D'EXÉCUTION
+# SECTION 1 : FONCTIONS "CHEF D'ORCHESTRE" PRINCIPALES (appelées par app.py)
 # ==============================================================================
 
-def run_script(command):
-    """Exécute un script et gère la sortie."""
-    print(f"\n▶️ EXÉCUTION : {' '.join(command)}")
+API_BASE_URL = "https://trends-ai-backend-image2-382329904395.europe-west1.run.app"
+
+def run_analysis_flow(payload: dict):
+    """
+    Fonction générique pour lancer une tâche d'analyse et sonder (poll) le résultat.
+    C'est le nouveau cœur de l'orchestration de l'analyse.
+    """
+    start_url = f"{API_BASE_URL}/api/analysis/start"
+    
     try:
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
-        full_output = [line for line in iter(process.stdout.readline, '')]
-        process.wait()
-        output_str = "".join(full_output)
-        print(output_str)
-        if process.returncode != 0:
-            return False, output_str
-        return True, output_str
-    except Exception as e:
-        return False, str(e)
+        # 1. Lancer la tâche et obtenir un ID de job
+        print(f"▶️ Lancement de la tâche avec les données : {payload}")
+        start_response = requests.post(start_url, json=payload)
+        start_response.raise_for_status()
+        job_id = start_response.json().get('jobId')
+        
+        if not job_id:
+            return {"error": "L'API n'a pas retourné de Job ID.", "details": start_response.text}
+            
+        print(f"✅ Tâche démarrée avec l'ID : {job_id}")
 
-# ==============================================================================
-# SECTION 2 : FONCTIONS "CHEF D'ORCHESTRE" PRINCIPALES (appelées par app.py)
-# ==============================================================================
+        status_url = f"{API_BASE_URL}/api/analysis/status/{job_id}"
+        
+        # 2. Sonder l'API toutes les 15 secondes jusqu'à ce que la tâche soit terminée
+        timeout_seconds = 1200 # Timeout de 20 minutes pour éviter une boucle infinie
+        start_time = time.time()
+        
+        while time.time() - start_time < timeout_seconds:
+            print(f"🔄 Vérification du statut de la tâche {job_id}...")
+            status_response = requests.get(status_url)
+            
+            if status_response.ok:
+                data = status_response.json()
+                status = data.get('status')
+                
+                if status == 'completed':
+                    print("✅ Analyse terminée avec succès !")
+                    return data.get('result') # On retourne le rapport d'analyse complet
+                elif status == 'failed':
+                    print("❌ L'analyse a échoué.")
+                    return {"error": "L'analyse a échoué côté backend.", "details": data.get('error')}
+                # Si le statut est 'pending' ou 'processing', on continue la boucle
+                
+            else:
+                print(f"⚠️ Erreur lors de la récupération du statut : {status_response.status_code}")
+
+            time.sleep(15) # Attendre 15 secondes avant la prochaine vérification
+
+        return {"error": "Timeout", "details": "L'analyse a pris plus de 20 minutes à répondre."}
+
+    except requests.exceptions.RequestException as e:
+        return {"error": "Échec de la communication avec l'API", "details": str(e)}
+
 
 def run_web_analysis_flow(url_to_scrape: str):
-    """Orchestre le flux complet pour l'analyse d'une URL web."""
-    print("--- 🚀 DÉBUT DU FLUX D'ANALYSE WEB ---")
-    scrape_command = ["python3", "bucket.py", url_to_scrape]
-    success, output = run_script(scrape_command)
-    if not success: return {"error": "Échec du script de scraping (bucket.py)", "details": output}
-    
-    match = re.search(r"S3_FOLDER_PATH:(s3://.*)", output)
-    if not match: return {"error": "Impossible de trouver le chemin S3.", "details": output}
-    
-    s3_folder_path = match.group(1).strip()
-    analysis_command = ["python3", "test_slglip2.py", s3_folder_path]
-    success, output = run_script(analysis_command)
-    if not success: return {"error": "Échec du script d'analyse d'images.", "details": output}
+    """Orchestre le flux web via une tâche asynchrone."""
+    print("--- 🚀 Lancement de la tâche d'analyse WEB ---")
+    payload = {"sourceType": "web", "sourceInput": url_to_scrape}
+    return run_analysis_flow(payload)
 
-    try:
-        with open('fashion_trends_report.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        return {"error": "Erreur de lecture du fichier JSON final.", "details": str(e)}
 
 def run_instagram_analysis_flow(usernames_str: str):
-    """Orchestre le flux complet pour l'analyse de comptes Instagram."""
-    print("--- 🚀 DÉBUT DU FLUX D'ANALYSE INSTAGRAM ---")
-    scrape_command = ["python3", "scrap_posts_instagram.py", usernames_str]
-    success, output = run_script(scrape_command)
-    if not success: return {"error": "Échec du script de scraping Instagram.", "details": output}
-        
-    match = re.search(r"JSON_FILE_PATH:(.*)", output)
-    if not match: return {"error": "Impossible de trouver le chemin du fichier JSON.", "details": output}
-        
-    json_file_path = match.group(1).strip()
-    analysis_command = ["python3", "test_slglip2.py", json_file_path]
-    success, output = run_script(analysis_command)
-    if not success: return {"error": "Échec du script d'analyse d'images.", "details": output}
-        
-    try:
-        with open('fashion_trends_report.json', 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        return {"error": "Erreur de lecture du fichier JSON final.", "details": str(e)}
+    """Orchestre le flux Instagram via une tâche asynchrone."""
+    print("--- 🚀 Lancement de la tâche d'analyse INSTAGRAM ---")
+    payload = {"sourceType": "instagram", "sourceInput": usernames_str}
+    return run_analysis_flow(payload)
 
-# Dans orchestrator.py
 
 def run_text_enrichment_flow(analysis_results: dict):
     """FLUX N°1 : Gère uniquement la recherche web et la synthèse TEXTE."""
@@ -88,10 +92,13 @@ def run_text_enrichment_flow(analysis_results: dict):
     if not analysis_results or 'error' in analysis_results:
         return "Erreur : Pas de résultats d'analyse de base à enrichir."
 
+    # Cette partie de l'analyse des résultats reste identique
+    analysis_data = analysis_results.get('result', analysis_results) # Gère les deux formats de retour
+
     analysis_summary = {
-        "top_vetements": [g for g, d in analysis_results.get('garment_trends', {}).get('distribution', {}).items()][:1],
-        "top_styles": [s for s, d in analysis_results.get('style_trends', {}).get('distribution', {}).items()][:1],
-        "couleurs_dominantes": [c.get('color_name') for c in analysis_results.get('color_trends', {}).get('dominant_colors', [])[:1]]
+        "top_vetements": [g for g, d in analysis_data.get('garment_trends', {}).get('distribution', {}).items()][:1],
+        "top_styles": [s for s, d in analysis_data.get('style_trends', {}).get('distribution', {}).items()][:1],
+        "couleurs_dominantes": [c.get('color_name') for c in analysis_data.get('color_trends', {}).get('dominant_colors', [])[:1]]
     }
     search_plan = determine_search_queries(analysis_summary)
     web_results = {}
@@ -102,22 +109,24 @@ def run_text_enrichment_flow(analysis_results: dict):
             web_results[key] = [result for query in search_plan.get(key, []) for result in tavily_results.get(query, [])]
     return generate_final_synthesis(analysis_summary, web_results)
 
+
 def run_image_generation_flow(analysis_results: dict):
     """FLUX N°2 : Gère uniquement la génération d'IMAGE."""
     print("\n--- 🚀 DÉBUT DU FLUX DE GÉNÉRATION D'IMAGE ---")
     if not analysis_results or 'error' in analysis_results:
         return None
 
+    analysis_data = analysis_results.get('result', analysis_results) # Gère les deux formats de retour
+
     analysis_summary = {
-        "top_vetements": [g for g, d in analysis_results.get('garment_trends', {}).get('distribution', {}).items()][:1],
-        "top_styles": [s for s, d in analysis_results.get('style_trends', {}).get('distribution', {}).items()][:1],
-        "couleurs_dominantes": [c.get('color_name') for c in analysis_results.get('color_trends', {}).get('dominant_colors', [])[:1]]
+        "top_vetements": [g for g, d in analysis_data.get('garment_trends', {}).get('distribution', {}).items()][:1],
+        "top_styles": [s for s, d in analysis_data.get('style_trends', {}).get('distribution', {}).items()][:1],
+        "couleurs_dominantes": [c.get('color_name') for c in analysis_data.get('color_trends', {}).get('dominant_colors', [])[:1]]
     }
     
     sd_prompts = generate_sd_prompts(analysis_summary)
     
     if sd_prompts:
-        # CORRECTION : On appelle la bonne fonction qui parle au backend
         return generate_image_on_backend(
             prompt=sd_prompts.get("prompt"),
             negative_prompt=sd_prompts.get("negative_prompt")
@@ -125,7 +134,7 @@ def run_image_generation_flow(analysis_results: dict):
     return None
 
 # ==============================================================================
-# SECTION 3 : FONCTIONS SPÉCIALISÉES (les "IA" et les "mains")
+# SECTION 2 : FONCTIONS SPÉCIALISÉES (les "IA" et les "mains")
 # ==============================================================================
 
 def search_external_web_with_tavily(query: str):
@@ -231,19 +240,16 @@ def generate_image_on_backend(prompt: str, negative_prompt: str):
     via Replicate.
     """
     print("\n🤖 Délégation de la génération d'image au service backend Node.js...")
-    # L'URL ci-dessous sera l'URL de votre backend Node.js déployé.
-    # Pour l'instant, nous utilisons localhost pour les tests locaux.
-    api_url = "http://localhost:3000/api/generation/generate-image"
+    api_url = "https://trends-ai-backend-image2-382329904395.europe-west1.run.app/api/generation/generate-image"
     payload = {"prompt": prompt, "negative_prompt": negative_prompt}
     try:
-        # Utilise une session requests pour des appels plus robustes
         with requests.Session() as session:
-            response = session.post(api_url, json=payload, timeout=300) # Augmente le timeout
-        response.raise_for_status()  # Lève une exception pour les codes d'erreur HTTP (4xx ou 5xx)
+            response = session.post(api_url, json=payload, timeout=300)
+        response.raise_for_status()
         result = response.json()
         image_url = result.get('imageUrl')
-        print(f"✅ Backend Node.js a déclenché la génération. URL de l'image (Replicate via generator.py) : {image_url}")
+        print(f"✅ Backend Node.js a déclenché la génération. URL de l'image : {image_url}")
         return image_url
     except requests.exceptions.RequestException as e:
-        print(f"❌ ERREUR : Impossible de contacter votre backend Node.js à {api_url} pour la génération d'image. Détails : {e}")
+        print(f"❌ ERREUR : Impossible de contacter votre backend Node.js pour la génération d'image. Détails : {e}")
         return None
