@@ -7,7 +7,13 @@ const rateLimit = require('express-rate-limit');
 const admin = require('firebase-admin');
 
 // --- INITIALISATION ---
-const serviceAccount = require('./service-account-key.json');
+// Lignes corrigées
+const serviceAccountString = process.env.GOOGLE_CREDENTIALS_JSON;
+if (!serviceAccountString) {
+  throw new Error("La variable d'environnement GOOGLE_CREDENTIALS_JSON n'est pas définie !");
+}
+const serviceAccount = JSON.parse(serviceAccountString);
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
@@ -20,28 +26,44 @@ const articleRoutes = require('./routes/articleRoutes');
 const imageGenerationRoutes = require('./routes/imageGenerationRoutes');
 const analysisRoutes = require('./routes/analysisRoutes');
 const assetsRoutes = require('./routes/assetsRoutes');
+const presetRoutes = require('./routes/presetRoutes');
 const heuritechReportRoutes = require('./routes/heuritechReportRoutes');
 
 // --- CONFIGURATION DE L'APPLICATION EXPRESS ---
 const app = express();
 const PORT = process.env.PORT || 8080;
+app.set('trust proxy', 1);
 
-// --- MIDDLEWARES DE SÉCURITÉ  ---
+// --- MIDDLEWARES DE SÉCURITÉ ET CORS (VERSION CORRIGÉE) ---
+
+// 1. Définir une liste de toutes les origines que vous voulez autoriser.
+const allowedOrigins = [
+  'https://front-trendsai.vercel.app', // Votre URL de production
+  'http://localhost:5173'             // Votre environnement de développement local
+];
+
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? 'https://front-trendsai.vercel.app' // 
-    : 'http://localhost:5173',          // Autorise le développement local
+  origin: function (origin, callback) {
+    // 2. Vérifier si l'origine de la requête est dans votre liste (ou si c'est une requête sans origine comme Postman)
+    // La condition `|| origin.endsWith('.vercel.app')` est une sécurité supplémentaire pour accepter les URL de preview de Vercel.
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Accès non autorisé par la politique CORS'));
+    }
+  },
   optionsSuccessStatus: 200
 };
-app.use(cors(corsOptions));
+
+app.use(cors(corsOptions)); // 3. Appliquer cette configuration flexible
 app.use(helmet());
 
 const limiter = rateLimit({
-	windowMs: 15 * 60 * 1000, // 15 minutes
-	max: 100, // Limite chaque IP à 100 requêtes toutes les 15 minutes
+  windowMs: 15 * 60 * 1000,
+  max: 100,
 });
 app.use(limiter);
-// --- FIN DES MIDDLEWARES DE SÉCURITÉ ---
+// --- FIN DES MIDDLEWARES ---
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -56,7 +78,7 @@ app.get('/', (req, res) => {
   res.send('Bienvenue sur le backend Fashion Trends!');
 });
 
-// Routes Publiques (ou partiellement publiques)
+// Routes Publiques
 app.use('/api/posts', postRoutes);
 app.use('/api/trends', trendAnalysisRoutes);
 app.use('/api/articles', articleRoutes);
@@ -65,15 +87,14 @@ app.use('/api/heuritech-reports', heuritechReportRoutes);
 
 // Routes Protégées
 app.use('/api/generation', authMiddleware, imageGenerationRoutes);
+app.use('/api/presets', authMiddleware, presetRoutes);
 app.use('/api/analysis', authMiddleware, analysisRoutes);
 
-// --- GESTIONNAIRES D'ERREURS (à placer à la fin) ---
-// Gérer les routes 404
+// --- GESTIONNAIRES D'ERREURS ---
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Route non trouvée.' });
 });
 
-// Gérer les erreurs 500
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Erreur interne du serveur.' });

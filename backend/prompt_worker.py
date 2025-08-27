@@ -1,53 +1,66 @@
-import sys, json, os
+import sys
+import json
+import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
-
-def generate_sd_prompts(user_choices: dict):
-    """Génère les prompts Stable Diffusion à partir des choix de l'utilisateur."""
-    print("\n[Worker] IA : Création du brief créatif...", file=sys.stderr)
+def generate_art_director_prompts(user_choices: dict):
+    """
+    Agit comme un directeur artistique : interprète les choix de l'utilisateur
+    pour créer le prompt parfait pour l'IA de génération d'image.
+    """
+    print("\n[Worker] IA : Interprétation du brief par le Directeur Artistique...", file=sys.stderr)
     
-    # --- MODIFICATION ICI ---
-    # On récupère le style et la nouvelle liste de vêtements colorés
     style = user_choices.get("style", "fashion")
     colored_garments = user_choices.get("coloredGarments", [])
     
     if not colored_garments:
-        print("❌ Erreur: La liste 'coloredGarments' est vide.", file=sys.stderr)
         return None
 
-    # On construit une description plus complexe
-    # ex: "(Pantone Red Handbag:1.3) and (Pantone Blue Coat:1.3)"
-    garments_str_parts = []
+    # --- NOUVELLE LOGIQUE DE TRADUCTION ---
+
+    # 1. On prépare une description détaillée pour chaque vêtement
+    garment_details_list = []
     for item in colored_garments:
-        # On utilise le nom de la couleur (plus descriptif) plutôt que le code hexadécimal
-        color_name = item.get("color", {}).get("name", "any color")
+        color_obj = item.get("color", {})
+        full_color_name = color_obj.get("color_name", "any color")
+        color_hex = color_obj.get("hex", "#FFFFFF") # On inclut le code HEX !
         garment_name = item.get("garment", "clothing")
-        garments_str_parts.append(f"({color_name} {garment_name}:1.3)")
+        
+        garment_details_list.append(
+            f"- Vêtement: '{garment_name}', Couleur: '{full_color_name}' (HEX: {color_hex})"
+        )
     
-    garments_str = " and ".join(garments_str_parts)
-    # --- FIN DE LA MODIFICATION ---
-    
+    garment_brief = "\n".join(garment_details_list)
+
+    # 2. On crée un template de prompt ultra-précis pour GPT-4o
     prompt_template = f"""
     # MISSION
-    Tu es un directeur artistique. Crée un prompt pour Stable Diffusion pour visualiser une tendance.
-    # MOTS-CLÉS
-    - Tenue : "{garments_str}"
-    - Style : "{style}"
-    # INSTRUCTIONS
-    1.  Sujet : Décris un mannequin (homme ou femme) avec une posture neutre et élégante. Évite toute sexualisation.
-    2.  Prompt Positif : Structure : Qualité (`(masterpiece, 8k, photorealistic:1.2)`), Sujet, Tenue (`wearing elegant {garments_str} in a {style} aesthetic`), Arrière-plan, Ambiance.
-    3.  Prompt Négatif : Inclus `EasyNegative`, défauts (`ugly, deformed, bad anatomy`), et termes de non-sexualisation (`nude, nsfw, suggestive`).
-    4.  Format de Sortie : UNIQUEMENT un objet JSON avec les clés "prompt" et "negative_prompt".
+    Tu es un directeur artistique expert en IA générative. Ta mission est de traduire un brief de mode en un prompt parfait pour un modèle d'image comme Stable Diffusion (utilisé via Replicate).
+
+    # BRIEF CLIENT (DONNÉES BRUTES)
+    {garment_brief}
+    - Style global : "{style}"
+
+    # TES INSTRUCTIONS (TRÈS IMPORTANTES)
+    1.  **INTERPRÈTE LA COULEUR** : Le client donne des noms de couleurs Pantone (ex: "Driftwood") et leur code HEX. Le modèle d'image ne comprend pas ces noms. Ta tâche est de **décrire la couleur** en termes simples et universels. Par exemple, pour "Driftwood" (HEX: #A69489), tu décriras "a warm, sandy beige color". Pour "Jazzy" (HEX: #D93A83), tu décriras "a vibrant, bold pink color".
+    2.  **CHOISIS LE GENRE** : Analyse les vêtements. Pour "slip dress", "skirt", "blouse", choisis "a female model". Pour "suit", "jacket", "pants", choisis "a male or female model". Sois logique.
+    3.  **CONSTRUIS LE PROMPT POSITIF** :
+        - Commence TOUJOURS par la qualité : `masterpiece, 8k, photorealistic, professional fashion photography,`
+        - Décris le sujet et la tenue en utilisant ta **description de couleur** : `full body shot of [ton choix de genre] wearing [description de la tenue avec la couleur interprétée]`
+        - Sois créatif pour le décor : Invente un arrière-plan qui correspond au style "{style}".
+    4.  **CONSTRUIS LE PROMPT NÉGATIF** : `EasyNegative, ugly, deformed, bad anatomy, blurry, text, watermark, logo, nude, nsfw, sexually suggestive`
+    5.  **FORMAT DE SORTIE** : Réponds UNIQUEMENT avec un objet JSON valide contenant les clés "prompt" et "negative_prompt". Ne mets rien d'autre.
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-4o", response_format={"type": "json_object"},
+            model="gpt-4o",
+            response_format={"type": "json_object"},
             messages=[
-                {"role": "system", "content": "You are a creative director. You output only valid JSON."},
+                {"role": "system", "content": "You are an expert AI art director. You only output valid JSON."},
                 {"role": "user", "content": prompt_template}
             ]
         )
@@ -59,6 +72,6 @@ def generate_sd_prompts(user_choices: dict):
 if __name__ == '__main__':
     input_data = sys.stdin.read()
     user_selections = json.loads(input_data)
-    prompts = generate_sd_prompts(user_selections)
+    prompts = generate_art_director_prompts(user_selections)
     if prompts:
-        print(json.dumps(prompts)) # Imprime le JSON des prompts en sortie
+        print(json.dumps(prompts))
