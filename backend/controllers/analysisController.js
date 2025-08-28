@@ -102,7 +102,7 @@ exports.enrichAnalysis = async (req, res) => {
     let enrichedData = '';
     let errorData = '';
 
-    pythonProcess.stdin.write(JSON.stringify(job.result));
+    pythonProcess.stdin.write(JSON.stringify(req.body));
     pythonProcess.stdin.end();
 
     pythonProcess.stdout.on('data', (data) => (enrichedData += data.toString()));

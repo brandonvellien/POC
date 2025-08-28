@@ -1,79 +1,109 @@
 import sys
 import json
 import os
+import traceback
 from openai import OpenAI
 from tavily import TavilyClient
 from datetime import datetime
 from dotenv import load_dotenv
 
-# --- Configuration ---
+# --- Configuration (inchangée) ---
 load_dotenv()
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY")
 
-# --- Fonctions Spécialisées (Helpers) ---
+# --- Fonctions Spécialisées ---
 
 def search_external_web_with_tavily(query: str):
-    """Effectue une recherche web avec l'API Tavily."""
     print(f"\n[Worker] Recherche web TAVILY pour : '{query}'", file=sys.stderr)
     if not TAVILY_API_KEY:
         return [{"error": "Clé API Tavily non configurée."}]
     try:
         tavily_client = TavilyClient(api_key=TAVILY_API_KEY)
-        response = tavily_client.search(query=query, search_depth="advanced", max_results=3)
+        response = tavily_client.search(query=query, search_depth="advanced", max_results=3, topic="general")
         return [{"title": item.get("title"), "url": item.get("url"), "content": item.get("content")} for item in response.get("results", [])]
     except Exception as e:
-        return [{"error": "Erreur de connexion à Tavily.", "details": str(e)}]
+        return [{"error": f"Erreur de connexion à Tavily: {e}"}]
 
-def determine_search_queries(analysis_summary: dict):
-    """Détermine les requêtes de recherche stratégiques à effectuer."""
-    print("\n[Worker] IA : Création du plan de recherche...", file=sys.stderr)
-    next_year = datetime.now().year + 1
-    top_color = (analysis_summary.get("couleurs_dominantes") or ["neutrals"])[0] or "neutres"
-    top_garment = (analysis_summary.get("top_vetements") or ["clothing"])[0] or "vêtements"
-    top_style = (analysis_summary.get("top_styles") or ["fashion"])[0] or "tendance"
+def expand_concepts_with_ai(user_selections: dict):
+    print("\n[Worker] IA : Étape A - Expansion des concepts...", file=sys.stderr)
+    focus_parts = []
+    if "garments" in user_selections and user_selections["garments"]: focus_parts.append("le vêtement '" + " ".join(user_selections["garments"]) + "'")
+    if "style" in user_selections and user_selections["style"]: focus_parts.append("le style '" + user_selections["style"] + "'")
+    if "color" in user_selections and user_selections["color"]: focus_parts.append("la couleur '" + user_selections["color"] + "'")
+    focus_str = " et ".join(focus_parts) if focus_parts else "la mode en général"
+
     prompt = f"""
-    En tant que prévisionniste de tendances, crée un plan de recherche au format JSON pour les tendances à venir ({next_year}).
-    Tendances clés : Couleur='{top_color}', Vêtement='{top_garment}', Style='{top_style}'.
-    Génère des requêtes précises pour chaque catégorie ci-dessous.
+    Je suis un analyste de tendances. Mon sujet d'étude est {focus_str}.
+    Pour préparer une recherche transversale, génère des concepts et des mots-clés associés dans les domaines suivants.
+    Sois concis et pertinent. Retourne UNIQUEMENT un objet JSON.
+
+    Exemple pour "slip dress":
     {{
-      "recherche_mode": ["tendance {top_garment} défilés {next_year}"],
-      "recherche_design": ["influence couleur {top_color} design intérieur {next_year}"],
-      "recherche_culture_medias": ["{top_style} dans les films récents ou la musique"]
+      "mode": ["Kate Moss", "années 90", "satin", "minimalisme", "sous-vêtement apparent"],
+      "design": ["fluidité", "formes organiques", "intérieur boudoir", "tissus drapés"],
+      "culture": ["icônes grunge", "Sex and the City", "esthétique héroïne chic"]
     }}
+
+    Génère le JSON pour le sujet : {focus_str}.
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini", response_format={"type": "json_object"},
+            model="gpt-4o-mini",
+            response_format={"type": "json_object"},
             messages=[
-                {"role": "system", "content": "You are a strategic Trend Forecaster assistant. You output only valid JSON."},
+                {"role": "system", "content": "Tu es un assistant expert en tendances culturelles et design. Tu retournes uniquement du JSON valide."},
                 {"role": "user", "content": prompt}
             ]
         )
         return json.loads(response.choices[0].message.content)
     except Exception as e:
-        print(f"❌ Erreur lors de la génération du plan de recherche : {e}", file=sys.stderr)
+        print(f"❌ Erreur lors de l'expansion des concepts : {e}", file=sys.stderr)
         return {}
 
+def determine_search_queries(expanded_concepts: dict):
+    print("\n[Worker] IA : Étape B - Création des requêtes de recherche ciblées...", file=sys.stderr)
+    next_year = datetime.now().year + 1
+    mode_keywords = " ".join(expanded_concepts.get("mode", []))
+    design_keywords = " ".join(expanded_concepts.get("design", []))
+    culture_keywords = " ".join(expanded_concepts.get("culture", []))
+
+    search_plan = {
+      "recherche_mode": [f"tendance mode {mode_keywords} {next_year}"] if mode_keywords else [],
+      "recherche_design": [f"tendance design d'intérieur {design_keywords} {next_year}"] if design_keywords else [],
+      "recherche_culture_medias": [f"analyse culturelle {culture_keywords} films musique"] if culture_keywords else []
+    }
+    return search_plan
+
 def generate_final_synthesis(analysis_summary: dict, web_results: dict):
-    """Génère le rapport final en Markdown à partir des données collectées."""
     print("\n[Worker] IA : Rédaction de l'analyse...", file=sys.stderr)
     next_year = datetime.now().year + 1
-    system_prompt = "Tu es un analyste de tendances senior. Rédige un rapport prospectif, pointu et concis en te basant exclusivement sur les sources fournies. Cite chaque source utilisée au format (Source : [Titre](URL)). Si une information n'est pas dans les sources, indique 'Aucun signal pertinent détecté dans les sources'."
+    sujet_principal = ", ".join(filter(None, [
+        analysis_summary.get('style'),
+        " ".join(analysis_summary.get('garments', [])),
+        analysis_summary.get('color')
+    ])) if analysis_summary else "la tendance analysée"
+
+    system_prompt = f"""
+    Tu es un analyste de tendances senior pour un cabinet de conseil de renommée mondiale.
+    Ton sujet principal est : **{sujet_principal}**.
+    Rédige un rapport prospectif, pointu et concis en te basant exclusivement sur les sources fournies.
+    IMPORTANT : Chaque phrase et chaque idée que tu présentes doit être **directement et explicitement liée** à ton sujet principal. Ne parle pas de tendances générales si tu ne peux pas expliquer leur pertinence spécifique pour **{sujet_principal}**.
+    Cite chaque source utilisée au format (Source : [Titre](URL)).
+    """
     user_prompt = f"""
     **DONNÉES BRUTES :**
-    - Tendances identifiées : {json.dumps(analysis_summary, ensure_ascii=False)}
     - Résultats de la recherche web : {json.dumps(web_results, indent=2, ensure_ascii=False)}
-    **MISSION : Rédige le rapport en suivant la structure ci-dessous.**
+    **MISSION : Rédige le rapport en suivant la structure ci-dessous et en restant focalisé sur le sujet.**
     ---
     # Analyse Prospective des Tendances {next_year}
     ## Vision Stratégique
-    *(En 2-3 phrases, quelle est l'histoire principale ?)*
+    *(En 2-3 phrases, quelle est l'histoire principale qui se dégage des informations fournies à propos de **{sujet_principal}** ?)*
     ## Évaluation de la Tendance Mode
-    *(Synthétise les informations "recherche_mode". Sois analytique sur la validation et la trajectoire future. Cite tes sources.)*
+    *(Comment **{sujet_principal}** se manifeste-t-il dans la mode ? Cite tes sources.)*
     ## Connexions Transversales
-    - **Design & Architecture :** *(Synthèse de "recherche_design". Cite ta source.)*
-    - **Culture & Médias :** *(Synthèse de "recherche_culture_medias". Cite ta source.)*
+    - **Design & Architecture :** *(Comment l'esthétique de **{sujet_principal}** se traduit-elle dans d'autres domaines créatifs ? Cite ta source.)*
+    - **Culture & Médias :** *(Quels signaux culturels confirment la tendance de **{sujet_principal}** ? Cite ta source.)*
     ---
     """
     try:
@@ -82,40 +112,34 @@ def generate_final_synthesis(analysis_summary: dict, web_results: dict):
     except Exception as e:
         return f"### Erreur\n\nImpossible de générer le rapport final : {e}"
 
-# --- FONCTION PRINCIPALE (celle qui manquait) ---
-
-def run_text_enrichment_flow(analysis_results: dict):
+# --- FONCTION PRINCIPALE MISE À JOUR ---
+def run_text_enrichment_flow(user_selections: dict):
     """Orchestre le flux complet de l'enrichissement de texte."""
-    if not analysis_results or 'error' in analysis_results:
-        return "Erreur : Pas de résultats d'analyse de base à enrichir."
-
-    # Prépare un résumé des données d'entrée
-    analysis_summary = {
-        "top_vetements": [g for g, d in analysis_results.get('garment_trends', {}).get('distribution', {}).items()][:1],
-        "top_styles": [s for s, d in analysis_results.get('style_trends', {}).get('distribution', {}).items()][:1],
-        "couleurs_dominantes": [c.get('color_name') for c in analysis_results.get('color_trends', {}).get('dominant_colors', [])[:1]]
-    }
     
-    # Exécute les étapes
-    search_plan = determine_search_queries(analysis_summary)
+    expanded_concepts = expand_concepts_with_ai(user_selections)
+    search_plan = determine_search_queries(expanded_concepts)
+    
     web_results = {}
     if search_plan:
-        all_queries = list(set(q for sublist in search_plan.values() for q in sublist))
+        all_queries = [q for sublist in search_plan.values() for q in sublist if q]
         tavily_results = {query: search_external_web_with_tavily(query) for query in all_queries}
+        
+        # --- CORRECTION DE LA LIGNE EN ERREUR ---
         for key in search_plan:
-            web_results[key] = [result for query in search_plan.get(key, []) for result in tavily_results.get(query, [])]
-    
-    return generate_final_synthesis(analysis_summary, web_results)
+            # On boucle sur les queries, puis sur les résultats de chaque query
+            web_results[key] = [
+                result_item 
+                for query in search_plan.get(key, []) 
+                for result_item in tavily_results.get(query, [])
+            ]
+        # --- FIN DE LA CORRECTION ---
+
+    return generate_final_synthesis(user_selections, web_results)
 
 
-# --- Point d'entrée du script ---
+# --- Point d'entrée du script (inchangé) ---
 if __name__ == '__main__':
-    # 1. Lire le rapport JSON depuis l'entrée standard (stdin)
     input_data = sys.stdin.read()
-    analysis_report = json.loads(input_data)
-    
-    # 2. Lancer le flux d'enrichissement
-    enriched_text = run_text_enrichment_flow(analysis_report)
-    
-    # 3. Imprimer le résultat final sur la sortie standard (stdout)
+    user_selections = json.loads(input_data)
+    enriched_text = run_text_enrichment_flow(user_selections)
     print(enriched_text)
