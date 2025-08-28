@@ -34,12 +34,12 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 app.set('trust proxy', 1);
 
-// --- MIDDLEWARES DE SÉCURITÉ ET CORS (VERSION CORRIGÉE) ---
+// --- MIDDLEWARES DE SÉCURITÉ ET CORS  ---
 
-// 1. Définir une liste de toutes les origines que vous voulez autoriser.
+
 const allowedOrigins = [
-  'https://front-trendsai.vercel.app', // Votre URL de production
-  'http://localhost:5173'             // Votre environnement de développement local
+  'https://front-trendsai.vercel.app', //URL de production
+  'http://localhost:5173'             
 ];
 
 const corsOptions = {
@@ -55,7 +55,7 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptions)); // 3. Appliquer cette configuration flexible
+app.use(cors(corsOptions)); 
 app.use(helmet());
 
 const limiter = rateLimit({
